@@ -1,3 +1,4 @@
+import 'package:aoun/features/auth/log_in/pages/login_page.dart';
 import 'package:aoun/features/onboarding/pages/onboarding_page.dart';
 import 'package:aoun/features/splash/pages/splash_page.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +15,8 @@ class AppRouter {
         return _buildRoute(const SplashPage());
       case onboarding:
         return _buildRoute(const OnboardingPage());
-      // case login:
-      //   return _buildRoute(const LoginPage());
+      case login:
+        return _buildRoute(const LoginPage());
       // case home:
       //   return _buildRoute(const HomePage());
       default:

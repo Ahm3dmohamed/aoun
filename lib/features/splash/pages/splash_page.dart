@@ -1,7 +1,8 @@
 import 'dart:async';
-
-import 'package:aoun/core/routing/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:aoun/core/utils/app_images.dart';
+import 'package:aoun/core/utils/app_sizes.dart';
+import 'package:aoun/core/routing/app_routes.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -24,17 +25,11 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       backgroundColor: Colors.teal,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset('assets/img/splash_logo.png', height: 150),
-            // Icon(Icons.volunteer_activism, size: 100, color: Colors.white),
-            // SizedBox(height: 20),
-            // Text(
-            //   'Aoun - Together We Care',
-            //   style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),
-            // ),
-          ],
+        child: Image.asset(
+          AppImages.splashLogo,
+          height: AppSizes.height(200),
+          width: AppSizes.width(200),
+          fit: BoxFit.contain,
         ),
       ),
     );
