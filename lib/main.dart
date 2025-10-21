@@ -1,6 +1,5 @@
 import 'package:aoun/core/routing/app_routes.dart';
 import 'package:aoun/core/themes/app_themes.dart';
-import 'package:aoun/features/splash/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -19,10 +18,10 @@ class AounApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) => MaterialApp(
         title: 'Aoun',
-        // theme: AppTheme.lightTheme,
+        theme: AppTheme.lightTheme,
         debugShowCheckedModeBanner: false,
         onGenerateRoute: AppRouter.onGenerateRoute,
-        initialRoute: AppRouter.splash,
+        initialRoute: AppRouter.login,
       ),
     );
   }

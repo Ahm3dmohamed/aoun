@@ -1,4 +1,6 @@
+import 'package:aoun/core/utils/app_text_style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnBoardingNavigation extends StatelessWidget {
@@ -25,74 +27,79 @@ class OnBoardingNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Align(
-          alignment: Alignment.centerRight,
-          child: IconButton(
-            onPressed: onSkip,
-            icon: const Icon(
-              Icons.close_rounded,
-              color: Colors.white,
-              size: 28,
-            ),
-            tooltip: 'Skip',
-          ),
-        ),
-
-        const Spacer(),
-
-        SmoothPageIndicator(
-          controller: controller,
-          count: pageCount,
-          effect: const ExpandingDotsEffect(
-            activeDotColor: Colors.white,
-            dotColor: Colors.white54,
-            dotHeight: 10,
-            dotWidth: 10,
-            expansionFactor: 4,
-            spacing: 8,
-          ),
-        ),
-
-        const SizedBox(height: 25),
-
-        GestureDetector(
-          onTap: onNext,
-          child: Container(
-            height: 70,
-            width: 70,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              shape: BoxShape.circle,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.25),
-                  blurRadius: 10,
-                  offset: const Offset(0, 4),
-                ),
-              ],
-            ),
-            child: ScaleTransition(
-              scale: Tween(begin: 0.9, end: 1.1).animate(
-                CurvedAnimation(
-                  parent: arrowController,
-                  curve: Curves.easeInOut,
-                ),
-              ),
-              child: Icon(
-                isLastPage
-                    ? Icons.favorite_rounded
-                    : Icons.arrow_forward_rounded,
-                color: gradients[currentIndex].last,
-                size: 34,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+      child: Column(
+        children: [
+          Align(
+            alignment: Alignment.centerRight,
+            child: TextButton(
+              onPressed: () {
+                onSkip();
+              },
+              child: Text(
+                'Skip',
+                style: AppTextStyles.subtitle1.copyWith(color: Colors.white),
               ),
             ),
           ),
-        ),
 
-        const SizedBox(height: 40),
-      ],
+          const Spacer(),
+
+          // Smooth Indicator
+          SmoothPageIndicator(
+            controller: controller,
+            count: pageCount,
+            effect: ExpandingDotsEffect(
+              activeDotColor: Colors.white,
+              dotColor: Colors.white54,
+              dotHeight: 10.h,
+              dotWidth: 10.w,
+              expansionFactor: 4,
+              spacing: 8.w,
+            ),
+          ),
+
+          SizedBox(height: 9.h),
+
+          // Next Button
+          GestureDetector(
+            onTap: onNext,
+            child: Container(
+              height: 70.h,
+              width: 70.w,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.25),
+                    blurRadius: 10.r,
+                    offset: Offset(0, 4.h),
+                  ),
+                ],
+              ),
+              child: ScaleTransition(
+                scale: Tween(begin: 0.9, end: 1.1).animate(
+                  CurvedAnimation(
+                    parent: arrowController,
+                    curve: Curves.easeInOut,
+                  ),
+                ),
+                child: Icon(
+                  isLastPage
+                      ? Icons.favorite_rounded
+                      : Icons.arrow_forward_rounded,
+                  color: gradients[currentIndex].last,
+                  size: 34.sp, // Responsive icon size
+                ),
+              ),
+            ),
+          ),
+
+          SizedBox(height: 20.h),
+        ],
+      ),
     );
   }
 }
