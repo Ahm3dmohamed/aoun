@@ -1,5 +1,9 @@
+import 'package:aoun/core/routing/app_routes.dart';
+import 'package:aoun/core/utils/app_images.dart';
+import 'package:aoun/core/utils/app_text_style.dart';
 import 'package:aoun/core/widgets/custom_textfield.dart';
 import 'package:aoun/core/widgets/primary_btton.dart';
+import 'package:aoun/features/auth/log_in/widgets/agreement_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,7 +25,6 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0E7C7B),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
@@ -31,29 +34,33 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(height: 40.h),
-                Center(
-                  child: Image.asset(
-                    'assets/img/splash_logo.png',
-                    height: 120.h,
-                  ),
-                ),
+
+                // ✅ Logo
+                Center(child: Image.asset(AppImages.splashLogo, height: 165.h)),
+
                 SizedBox(height: 20.h),
+
+                // ✅ Headline
                 Text(
                   'Welcome Back 👋',
-                  style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
+                  style: AppTextStyle.heading(
+                    context,
+                    fontSize: 26,
                     color: const Color(0xFFF6F6F6),
                   ),
                 ),
+
                 SizedBox(height: 8.h),
+
+                // ✅ Subtitle
                 Text(
                   'Login to continue your journey with Aoun.',
-                  style: Theme.of(
-                    context,
-                  ).textTheme.bodyMedium?.copyWith(color: Colors.grey[200]),
+                  style: AppTextStyle.body(context, color: Colors.grey[200]!),
                 ),
+
                 SizedBox(height: 40.h),
 
+                // ✅ Email Field
                 CustomTextField(
                   controller: _emailController,
                   label: 'Email',
@@ -72,6 +79,7 @@ class _LoginPageState extends State<LoginPage> {
 
                 SizedBox(height: 20.h),
 
+                // ✅ Password Field
                 CustomTextField(
                   controller: _passwordController,
                   label: 'Password',
@@ -101,35 +109,17 @@ class _LoginPageState extends State<LoginPage> {
 
                 SizedBox(height: 15.h),
 
+                // ✅ Terms & Conditions
                 Row(
                   children: [
                     Checkbox(
                       value: _agreeTerms,
-                      onChanged: (val) {
-                        setState(() => _agreeTerms = val ?? false);
-                      },
+                      onChanged: (val) =>
+                          setState(() => _agreeTerms = val ?? false),
                       checkColor: Colors.white,
-                      activeColor: const Color(0xFFEE6C4D),
+                      activeColor: Colors.black,
                     ),
-                    Expanded(
-                      child: Text.rich(
-                        TextSpan(
-                          text: 'I agree to the ',
-                          style: Theme.of(
-                            context,
-                          ).textTheme.bodyMedium?.copyWith(color: Colors.white),
-                          children: [
-                            TextSpan(
-                              text: 'Terms & Conditions',
-                              style: const TextStyle(
-                                color: Color(0xFFEE6C4D),
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                    Expanded(child: AgreementText()),
                   ],
                 ),
 
@@ -151,6 +141,7 @@ class _LoginPageState extends State<LoginPage> {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text('Login Successful!')),
                       );
+                      _goToHome(context);
                     }
                   },
                 ),
@@ -162,17 +153,21 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     Text(
                       "Don't have an account?",
-                      style: Theme.of(
+                      style: AppTextStyle.body(
                         context,
-                      ).textTheme.bodyMedium?.copyWith(color: Colors.grey[200]),
+                        color: Colors.grey[200]!,
+                      ),
                     ),
                     TextButton(
-                      onPressed: () {
-                        // Navigator.pushNamed(context, AppRoutes.register);
-                      },
-                      child: const Text(
+                      onPressed: () =>
+                          Navigator.pushNamed(context, AppRoutes.register),
+                      child: Text(
                         'Sign Up',
-                        style: TextStyle(color: Color(0xFFF6F6F6)),
+                        style: AppTextStyle.custom(
+                          context,
+                          color: const Color(0xFFF6F6F6),
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                   ],
@@ -183,5 +178,9 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  void _goToHome(BuildContext context) {
+    Navigator.pushReplacementNamed(context, AppRoutes.home);
   }
 }

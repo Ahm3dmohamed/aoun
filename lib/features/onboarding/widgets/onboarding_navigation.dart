@@ -34,19 +34,20 @@ class OnBoardingNavigation extends StatelessWidget {
           Align(
             alignment: Alignment.centerRight,
             child: TextButton(
-              onPressed: () {
-                onSkip();
-              },
+              onPressed: onSkip,
               child: Text(
                 'Skip',
-                style: AppTextStyles.subtitle1.copyWith(color: Colors.white),
+                style: AppTextStyle.custom(
+                  context,
+                  color: Colors.white,
+                  fontSize: 13,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
             ),
           ),
-
           const Spacer(),
 
-          // Smooth Indicator
           SmoothPageIndicator(
             controller: controller,
             count: pageCount,
@@ -62,7 +63,6 @@ class OnBoardingNavigation extends StatelessWidget {
 
           SizedBox(height: 9.h),
 
-          // Next Button
           GestureDetector(
             onTap: onNext,
             child: Container(
@@ -91,7 +91,7 @@ class OnBoardingNavigation extends StatelessWidget {
                       ? Icons.favorite_rounded
                       : Icons.arrow_forward_rounded,
                   color: gradients[currentIndex].last,
-                  size: 34.sp, // Responsive icon size
+                  size: 34.sp,
                 ),
               ),
             ),

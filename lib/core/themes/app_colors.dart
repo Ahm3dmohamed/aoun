@@ -6,6 +6,7 @@ class AppColors {
   static const Color lightPrimary = Colors.blueAccent;
   static const Color lightText = Colors.white;
   static const Color lightCard = Color(0xFFF7F7F7);
+  static const Color grey = Colors.grey;
 
   static const Color darkBackground = Colors.black;
   static const Color darkPrimary = Color.fromARGB(255, 10, 51, 122);

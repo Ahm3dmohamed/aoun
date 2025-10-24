@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'package:aoun/core/utils/responsive_extension.dart';
+import 'package:aoun/core/utils/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:aoun/core/utils/app_images.dart';
-import 'package:aoun/core/utils/app_sizes.dart';
+import 'package:aoun/core/utils/style_manager.dart';
 import 'package:aoun/core/routing/app_routes.dart';
 
 class SplashPage extends StatefulWidget {
@@ -16,7 +18,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 3), () {
-      Navigator.pushReplacementNamed(context, AppRouter.onboarding);
+      Navigator.pushReplacementNamed(context, AppRoutes.onboarding);
     });
   }
 
@@ -27,8 +29,8 @@ class _SplashPageState extends State<SplashPage> {
       body: Center(
         child: Image.asset(
           AppImages.splashLogo,
-          height: AppSizes.height(200),
-          width: AppSizes.width(200),
+          height: context.resH(200),
+          width: context.resW(200),
           fit: BoxFit.contain,
         ),
       ),

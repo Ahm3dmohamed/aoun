@@ -1,12 +1,15 @@
 import 'package:aoun/features/auth/log_in/pages/login_page.dart';
+import 'package:aoun/features/auth/register/pages/register_page.dart';
+import 'package:aoun/features/home/home_page.dart';
 import 'package:aoun/features/onboarding/pages/onboarding_page.dart';
 import 'package:aoun/features/splash/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 
-class AppRouter {
+class AppRoutes {
   static const String splash = '/';
   static const String onboarding = '/onboarding';
   static const String login = '/login';
+  static const String register = '/register';
   static const String home = '/home';
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -17,8 +20,10 @@ class AppRouter {
         return _buildRoute(const OnboardingPage());
       case login:
         return _buildRoute(const LoginPage());
-      // case home:
-      //   return _buildRoute(const HomePage());
+      case register:
+        return _buildRoute(const RegisterPage());
+      case home:
+        return _buildRoute(const HomePage());
       default:
         return _errorRoute();
     }

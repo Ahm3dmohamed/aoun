@@ -30,11 +30,27 @@ class CustomTextField extends StatelessWidget {
       validator: validator,
       decoration: InputDecoration(
         labelText: label,
+
         hintText: hint,
-        labelStyle: Theme.of(context).textTheme.bodyMedium,
-        hintStyle: TextStyle(color: Colors.grey[400], fontSize: 14.sp),
+        labelStyle: Theme.of(
+          context,
+        ).textTheme.bodyMedium!.copyWith(color: Colors.white, fontSize: 14.sp),
+        hintStyle: TextStyle(color: Colors.white, fontSize: 14.sp),
         suffixIcon: suffixIcon,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(12.r)),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12.r),
+          borderSide: BorderSide(color: Colors.white),
+        ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12.r),
+          borderSide: BorderSide(color: Colors.white),
+        ),
+
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12.r),
+          borderSide: BorderSide(color: Colors.white),
+        ),
+
         contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
       ),
     );

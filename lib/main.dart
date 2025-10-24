@@ -20,8 +20,8 @@ class AounApp extends StatelessWidget {
         title: 'Aoun',
         theme: AppTheme.lightTheme,
         debugShowCheckedModeBanner: false,
-        onGenerateRoute: AppRouter.onGenerateRoute,
-        initialRoute: AppRouter.login,
+        onGenerateRoute: AppRoutes.onGenerateRoute,
+        initialRoute: AppRoutes.splash,
       ),
     );
   }

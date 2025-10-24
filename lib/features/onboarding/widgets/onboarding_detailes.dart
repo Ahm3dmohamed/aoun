@@ -1,14 +1,14 @@
-import 'package:aoun/core/utils/app_text_style.dart';
 import 'package:flutter/material.dart';
+import 'package:aoun/core/utils/app_text_style.dart';
+import 'package:aoun/core/themes/app_colors.dart';
+import 'package:aoun/core/utils/responsive_extension.dart';
 
-import '../../../core/utils/app_sizes.dart';
-
-class OnBoardingDetailes extends StatelessWidget {
+class OnBoardingDetails extends StatelessWidget {
   final String image;
   final String title;
   final String desc;
 
-  const OnBoardingDetailes({
+  const OnBoardingDetails({
     super.key,
     required this.image,
     required this.title,
@@ -18,24 +18,31 @@ class OnBoardingDetailes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: AppSizes.width(24)),
+      padding: EdgeInsets.symmetric(horizontal: context.resW(24)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(
             image,
-            height: AppSizes.height(300),
-            width: AppSizes.width(300),
+            height: context.resH(300),
+            width: context.resW(300),
             fit: BoxFit.contain,
           ),
-          SizedBox(height: AppSizes.height(20)),
+          SizedBox(height: context.resH(10)),
+
           Text(
             title,
-            style: AppTextStyles.headline2,
             textAlign: TextAlign.center,
+            style: AppTextStyle.heading(context),
           ),
-          SizedBox(height: AppSizes.height(16)),
-          Text(desc, style: AppTextStyles.body, textAlign: TextAlign.center),
+
+          SizedBox(height: context.resH(10)),
+
+          Text(
+            desc,
+            textAlign: TextAlign.center,
+            style: AppTextStyle.body(context),
+          ),
         ],
       ),
     );

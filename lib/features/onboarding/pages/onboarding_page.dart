@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:aoun/core/routing/app_routes.dart';
 import 'package:aoun/core/utils/app_images.dart';
-import 'package:aoun/core/utils/app_sizes.dart';
+import 'package:aoun/core/utils/style_manager.dart';
 import 'package:aoun/features/onboarding/widgets/onboarding_detailes.dart';
 import 'package:aoun/features/onboarding/widgets/onboarding_navigation.dart';
 
@@ -26,7 +26,7 @@ class _OnboardingPageState extends State<OnboardingPage>
     [Color(0xFF11998E), Color(0xFF38EF7D)],
   ];
 
-  late final List<OnBoardingDetailes> pages;
+  late final List<OnBoardingDetails> pages;
 
   @override
   void initState() {
@@ -37,19 +37,19 @@ class _OnboardingPageState extends State<OnboardingPage>
     )..repeat(reverse: true);
 
     pages = [
-      const OnBoardingDetailes(
+      const OnBoardingDetails(
         image: AppImages.onboarding1,
         title: "Support Each Other",
         desc:
             "Join hands with Aoun to bring hope and care to people in need. Together, we make compassion a habit.",
       ),
-      const OnBoardingDetailes(
+      const OnBoardingDetails(
         image: AppImages.onboarding2,
         title: "Easy & Trusted Donations",
         desc:
             "Contribute to verified causes effortlessly. Every donation you make directly reaches those who need it most.",
       ),
-      const OnBoardingDetailes(
+      const OnBoardingDetails(
         image: AppImages.onboarding3,
         title: "Make a Difference",
         desc:
@@ -133,6 +133,6 @@ class _OnboardingPageState extends State<OnboardingPage>
   }
 
   void _goToLogin(BuildContext context) {
-    Navigator.pushReplacementNamed(context, AppRouter.login);
+    Navigator.pushReplacementNamed(context, AppRoutes.login);
   }
 }
