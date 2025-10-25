@@ -66,20 +66,19 @@ class _LoginPageState extends State<LoginPage> {
                   label: 'Email',
                   hint: 'Enter your email address',
                   keyboardType: TextInputType.emailAddress,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter your email';
-                    }
-                    if (!value.contains('@')) {
-                      return 'Enter a valid email';
-                    }
-                    return null;
-                  },
+                  // validator: (value) {
+                  //   if (value == null || value.isEmpty) {
+                  //     return 'Please enter your email';
+                  //   }
+                  //   if (!value.contains('@')) {
+                  //     return 'Enter a valid email';
+                  //   }
+                  //   return null;
+                  // },
                 ),
 
                 SizedBox(height: 20.h),
 
-                // ✅ Password Field
                 CustomTextField(
                   controller: _passwordController,
                   label: 'Password',
@@ -96,26 +95,26 @@ class _LoginPageState extends State<LoginPage> {
                       setState(() => _obscurePassword = !_obscurePassword);
                     },
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter your password';
-                    }
-                    if (value.length < 6) {
-                      return 'Password must be at least 6 characters';
-                    }
-                    return null;
-                  },
+                  // validator: (value) {
+                  //   if (value == null || value.isEmpty) {
+                  //     return 'Please enter your password';
+                  //   }
+                  //   if (value.length < 6) {
+                  //     return 'Password must be at least 6 characters';
+                  //   }
+                  //   return null;
+                  // },
                 ),
 
                 SizedBox(height: 15.h),
 
-                // ✅ Terms & Conditions
                 Row(
                   children: [
                     Checkbox(
                       value: _agreeTerms,
-                      onChanged: (val) =>
-                          setState(() => _agreeTerms = val ?? false),
+                      onChanged: (value) {},
+                      // onChanged: (val) =>
+                      //     setState(() => _agreeTerms = val ?? false),
                       checkColor: Colors.white,
                       activeColor: Colors.black,
                     ),
@@ -128,21 +127,23 @@ class _LoginPageState extends State<LoginPage> {
                 PrimaryButton(
                   text: 'Login',
                   onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      if (!_agreeTerms) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('You must agree to the terms first.'),
-                          ),
-                        );
-                        return;
-                      }
+                    _goToHome(context);
 
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Login Successful!')),
-                      );
-                      _goToHome(context);
-                    }
+                    // if (_formKey.currentState!.validate()) {
+                    //   if (!_agreeTerms) {
+                    //     ScaffoldMessenger.of(context).showSnackBar(
+                    //       const SnackBar(
+                    //         content: Text('You must agree to the terms first.'),
+                    //       ),
+                    //     );
+                    //     return;
+                    //   }
+
+                    //   ScaffoldMessenger.of(context).showSnackBar(
+                    //     const SnackBar(content: Text('Login Successful!')),
+                    //   );
+                    //   _goToHome(context);
+                    // }
                   },
                 ),
 

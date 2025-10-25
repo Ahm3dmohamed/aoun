@@ -59,12 +59,12 @@ class _RegisterPageState extends State<RegisterPage> {
                   label: 'Full Name',
                   hint: 'Enter your full name',
                   keyboardType: TextInputType.name,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter your name';
-                    }
-                    return null;
-                  },
+                  // validator: (value) {
+                  //   if (value == null || value.isEmpty) {
+                  //     return 'Please enter your name';
+                  //   }
+                  //   return null;
+                  // },
                 ),
                 SizedBox(height: 16.h),
 
@@ -73,15 +73,15 @@ class _RegisterPageState extends State<RegisterPage> {
                   label: 'Email',
                   hint: 'Enter your email address',
                   keyboardType: TextInputType.emailAddress,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter your email';
-                    }
-                    if (!value.contains('@')) {
-                      return 'Enter a valid email address';
-                    }
-                    return null;
-                  },
+                  // validator: (value) {
+                  //   if (value == null || value.isEmpty) {
+                  //     return 'Please enter your email';
+                  //   }
+                  //   if (!value.contains('@')) {
+                  //     return 'Enter a valid email address';
+                  //   }
+                  //   return null;
+                  // },
                 ),
                 SizedBox(height: 16.h),
 
@@ -99,15 +99,15 @@ class _RegisterPageState extends State<RegisterPage> {
                     onPressed: () =>
                         setState(() => _obscurePassword = !_obscurePassword),
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter your password';
-                    }
-                    if (value.length < 6) {
-                      return 'Password must be at least 6 characters long';
-                    }
-                    return null;
-                  },
+                  // validator: (value) {
+                  //   if (value == null || value.isEmpty) {
+                  //     return 'Please enter your password';
+                  //   }
+                  //   if (value.length < 6) {
+                  //     return 'Password must be at least 6 characters long';
+                  //   }
+                  //   return null;
+                  // },
                 ),
                 SizedBox(height: 16.h),
 
@@ -126,15 +126,15 @@ class _RegisterPageState extends State<RegisterPage> {
                       () => _obscureConfirmPassword = !_obscureConfirmPassword,
                     ),
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please confirm your password';
-                    }
-                    if (value != _passwordController.text) {
-                      return 'Passwords do not match';
-                    }
-                    return null;
-                  },
+                  // validator: (value) {
+                  //   if (value == null || value.isEmpty) {
+                  //     return 'Please confirm your password';
+                  //   }
+                  //   if (value != _passwordController.text) {
+                  //     return 'Passwords do not match';
+                  //   }
+                  //   return null;
+                  // },
                 ),
 
                 SizedBox(height: 15.h),
@@ -143,8 +143,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   children: [
                     Checkbox(
                       value: _agreeTerms,
-                      onChanged: (val) =>
-                          setState(() => _agreeTerms = val ?? false),
+                      onChanged: (val) {},
+                      // setState(() => _agreeTerms = val ?? false),
                     ),
                     Expanded(
                       child: AgreementText(),
@@ -172,25 +172,26 @@ class _RegisterPageState extends State<RegisterPage> {
                 PrimaryButton(
                   text: 'Create Account',
                   onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      if (!_agreeTerms) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('You must agree to the terms first.'),
-                          ),
-                        );
-                        return;
-                      }
+                    // if (_formKey.currentState!.validate()) {
+                    //   if (!_agreeTerms) {
+                    //     ScaffoldMessenger.of(context).showSnackBar(
+                    //       const SnackBar(
+                    //         content: Text('You must agree to the terms first.'),
+                    //       ),
+                    //     );
+                    //     return;
+                    //   }
 
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Account created successfully!'),
-                        ),
-                      );
-                      _goToHome(context);
-                      // Navigate to home or login
-                      // Navigator.pushReplacementNamed(context, AppRouter.login);
-                    }
+                    //   ScaffoldMessenger.of(context).showSnackBar(
+                    //     const SnackBar(
+                    //       content: Text('Account created successfully!'),
+                    //     ),
+                    //   );
+                    //   _goToHome(context);
+                    //   // Navigate to home or login
+                    //   // Navigator.pushReplacementNamed(context, AppRouter.login);
+                    // }
+                    _goToHome(context);
                   },
                 ),
 

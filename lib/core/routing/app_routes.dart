@@ -1,6 +1,7 @@
 import 'package:aoun/features/auth/log_in/pages/login_page.dart';
 import 'package:aoun/features/auth/register/pages/register_page.dart';
 import 'package:aoun/features/home/home_page.dart';
+import 'package:aoun/features/home/main_home_navigation.dart';
 import 'package:aoun/features/onboarding/pages/onboarding_page.dart';
 import 'package:aoun/features/splash/pages/splash_page.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ class AppRoutes {
   static const String onboarding = '/onboarding';
   static const String login = '/login';
   static const String register = '/register';
+  static const String donationCampaigns = '/donation_campaigns';
   static const String home = '/home';
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
@@ -23,7 +25,7 @@ class AppRoutes {
       case register:
         return _buildRoute(const RegisterPage());
       case home:
-        return _buildRoute(const HomePage());
+        return _buildRoute(const MainHomeNavigation());
       default:
         return _errorRoute();
     }
