@@ -1,6 +1,7 @@
 class AppImages {
   // Logos
   static const String splashLogo = 'assets/img/splash_logo.png';
+  static const String backgroundImage = 'assets/img/header.png';
 
   // Onboarding
   static const String onboarding1 = 'assets/img/Charity-rafiki.png';

@@ -21,7 +21,7 @@ class AounApp extends StatelessWidget {
         theme: AppTheme.lightTheme,
         debugShowCheckedModeBanner: false,
         onGenerateRoute: AppRoutes.onGenerateRoute,
-        initialRoute: AppRoutes.splash,
+        initialRoute: AppRoutes.home,
       ),
     );
   }
