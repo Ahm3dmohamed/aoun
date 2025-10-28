@@ -21,10 +21,10 @@ class PrimaryButton extends StatelessWidget {
       height: 52.h,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: Color.fromARGB(255, 21, 123, 133),
-          foregroundColor: Colors.white,
+          backgroundColor: AppColors.clickedButton,
+          foregroundColor: Color(0xffFFFFFF),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12.r),
+            borderRadius: BorderRadius.circular(34.r),
           ),
           textStyle: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
         ),

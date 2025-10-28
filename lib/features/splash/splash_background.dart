@@ -1,10 +1,10 @@
+import 'package:aoun/core/themes/app_colors.dart';
+import 'package:aoun/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SplashBackground extends StatelessWidget {
   final Widget child;
   final bool withOverlay;
-  static const String backgroundImage = 'assets/img/header.png';
 
   const SplashBackground({
     super.key,
@@ -16,16 +16,19 @@ class SplashBackground extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Positioned.fill(child: Image.asset(backgroundImage, fit: BoxFit.cover)),
+        Positioned.fill(
+          child: Image.asset(AppImages.backGround, fit: BoxFit.cover),
+        ),
 
         if (withOverlay)
           Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  Colors.teal.withOpacity(0.8),
-                  Colors.teal.withOpacity(0.6),
+                  AppColors.lightPrimary,
                   Colors.teal.withOpacity(0.4),
+                  Colors.teal.withOpacity(0.6),
+                  Colors.teal.withOpacity(0.8),
                 ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -33,9 +36,7 @@ class SplashBackground extends StatelessWidget {
             ),
           ),
 
-        SafeArea(
-          child: SizedBox(height: 1..sh, width: double.infinity, child: child),
-        ),
+        SafeArea(child: SizedBox(child: child)),
       ],
     );
   }

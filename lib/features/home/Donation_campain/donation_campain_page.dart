@@ -1,6 +1,4 @@
 import 'package:aoun/app_constants.dart';
-import 'package:aoun/core/themes/app_colors.dart';
-import 'package:aoun/core/utils/app_text_style.dart';
 import 'package:aoun/features/home/Donation_campain/widgets/donation_card.dart';
 import 'package:aoun/features/splash/splash_background.dart';
 import 'package:flutter/material.dart';

@@ -41,7 +41,9 @@ class OnBoardingDetails extends StatelessWidget {
           Text(
             desc,
             textAlign: TextAlign.center,
-            style: AppTextStyle.body(context),
+            style: AppTextStyle.body(
+              context,
+            ).copyWith(color: AppColors.lightCard),
           ),
         ],
       ),

@@ -27,6 +27,7 @@ class CustomTextField extends StatelessWidget {
       controller: controller,
       obscureText: obscureText,
       keyboardType: keyboardType,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: validator,
       style: TextStyle(color: Colors.white, fontSize: 16.sp),
       decoration: InputDecoration(
@@ -39,16 +40,16 @@ class CustomTextField extends StatelessWidget {
         hintStyle: TextStyle(color: Colors.white, fontSize: 14.sp),
         suffixIcon: suffixIcon,
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12.r),
+          borderRadius: BorderRadius.circular(34.r),
           borderSide: BorderSide(color: Colors.white),
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12.r),
+          borderRadius: BorderRadius.circular(34.r),
           borderSide: BorderSide(color: Colors.white),
         ),
 
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12.r),
+          borderRadius: BorderRadius.circular(34.r),
           borderSide: BorderSide(color: Colors.white),
         ),
 

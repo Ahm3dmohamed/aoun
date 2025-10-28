@@ -1,11 +1,16 @@
 import 'package:aoun/core/routing/app_routes.dart';
+import 'package:aoun/core/themes/app_colors.dart';
 import 'package:aoun/core/utils/app_images.dart';
 import 'package:aoun/core/utils/app_text_style.dart';
 import 'package:aoun/core/widgets/custom_textfield.dart';
 import 'package:aoun/core/widgets/primary_btton.dart';
 import 'package:aoun/features/auth/log_in/widgets/agreement_text.dart';
+import 'package:aoun/features/auth/forgot_password/widgets/forget_password_text.dart';
+import 'package:aoun/features/auth/log_in/widgets/social_buttons.dart';
+import 'package:aoun/features/splash/auth_background.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -24,61 +29,57 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
-          child: Form(
-            key: _formKey,
+    return AuthBackground(
+      child: SingleChildScrollView(
+        child: Form(
+          key: _formKey,
+          child: Container(
+            padding: EdgeInsets.all(16.w),
+            margin: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+            decoration: BoxDecoration(
+              color: AppColors.cardColor.withOpacity(.6),
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(18.r),
+                topRight: Radius.circular(18.r),
+              ),
+            ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 40.h),
-
-                // ✅ Logo
-                Center(child: Image.asset(AppImages.splashLogo, height: 165.h)),
-
-                SizedBox(height: 20.h),
-
-                // ✅ Headline
-                Text(
-                  'Welcome Back 👋',
-                  style: AppTextStyle.heading(
-                    context,
-                    fontSize: 26,
-                    color: const Color(0xFFF6F6F6),
-                  ),
+                // Header
+                Row(
+                  children: [
+                    const Spacer(),
+                    Text(
+                      '       Sign in',
+                      style: AppTextStyle.heading(
+                        context,
+                        fontSize: 26,
+                        color: const Color(0xFFF6F6F6),
+                      ),
+                    ),
+                    const Spacer(),
+                    Image.asset(AppImages.splashLogo, height: 80.h),
+                  ],
                 ),
 
-                SizedBox(height: 8.h),
-
-                // ✅ Subtitle
+                Text('Welcome Back', style: AppTextStyle.heading(context)),
                 Text(
-                  'Login to continue your journey with Aoun.',
+                  'Continue your journey with Aoun.',
                   style: AppTextStyle.body(context, color: Colors.grey[200]!),
                 ),
+                SizedBox(height: 9.h),
 
-                SizedBox(height: 40.h),
-
-                // ✅ Email Field
+                // Email Field
                 CustomTextField(
                   controller: _emailController,
                   label: 'Email',
                   hint: 'Enter your email address',
                   keyboardType: TextInputType.emailAddress,
-                  // validator: (value) {
-                  //   if (value == null || value.isEmpty) {
-                  //     return 'Please enter your email';
-                  //   }
-                  //   if (!value.contains('@')) {
-                  //     return 'Enter a valid email';
-                  //   }
-                  //   return null;
-                  // },
                 ),
-
                 SizedBox(height: 20.h),
 
+                // Password Field
                 CustomTextField(
                   controller: _passwordController,
                   label: 'Password',
@@ -95,26 +96,16 @@ class _LoginPageState extends State<LoginPage> {
                       setState(() => _obscurePassword = !_obscurePassword);
                     },
                   ),
-                  // validator: (value) {
-                  //   if (value == null || value.isEmpty) {
-                  //     return 'Please enter your password';
-                  //   }
-                  //   if (value.length < 6) {
-                  //     return 'Password must be at least 6 characters';
-                  //   }
-                  //   return null;
-                  // },
                 ),
 
-                SizedBox(height: 15.h),
+                SizedBox(height: 9.h),
 
                 Row(
                   children: [
                     Checkbox(
                       value: _agreeTerms,
-                      onChanged: (value) {},
-                      // onChanged: (val) =>
-                      //     setState(() => _agreeTerms = val ?? false),
+                      onChanged: (val) =>
+                          setState(() => _agreeTerms = val ?? false),
                       checkColor: Colors.white,
                       activeColor: Colors.black,
                     ),
@@ -122,32 +113,35 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
 
-                SizedBox(height: 30.h),
+                SizedBox(height: 9.h),
 
                 PrimaryButton(
                   text: 'Login',
                   onPressed: () {
                     _goToHome(context);
-
-                    // if (_formKey.currentState!.validate()) {
-                    //   if (!_agreeTerms) {
-                    //     ScaffoldMessenger.of(context).showSnackBar(
-                    //       const SnackBar(
-                    //         content: Text('You must agree to the terms first.'),
-                    //       ),
-                    //     );
-                    //     return;
-                    //   }
-
-                    //   ScaffoldMessenger.of(context).showSnackBar(
-                    //     const SnackBar(content: Text('Login Successful!')),
-                    //   );
-                    //   _goToHome(context);
-                    // }
                   },
                 ),
+                ForgetPasswordText(),
 
-                SizedBox(height: 25.h),
+                Row(
+                  children: const [
+                    Expanded(child: Divider(color: Colors.white54)),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Text(
+                        'Or continue with',
+                        style: TextStyle(color: Colors.white70),
+                      ),
+                    ),
+                    Expanded(child: Divider(color: Colors.white54)),
+                  ],
+                ),
+
+                SizedBox(height: 15.h),
+
+                SocialButtons(),
+
+                SizedBox(height: 15.h),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
