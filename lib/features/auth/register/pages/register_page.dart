@@ -1,11 +1,12 @@
 import 'package:aoun/core/routing/app_routes.dart';
 import 'package:aoun/core/themes/app_colors.dart';
 import 'package:aoun/core/utils/app_text_style.dart';
-import 'package:aoun/core/widgets/custom_textfield.dart';
 import 'package:aoun/core/widgets/primary_btton.dart';
-import 'package:aoun/features/auth/register/widgets/custom_dropdownfield.dart';
+import 'package:aoun/features/auth/register/widgets/basic_information_section.dart';
+import 'package:aoun/features/auth/register/widgets/preferrence_section.dart';
+import 'package:aoun/features/auth/register/widgets/toggle_user_type.dart';
+import 'package:aoun/features/auth/register/widgets/bottom_login_text.dart';
 import 'package:aoun/features/splash/auth_background.dart';
-import 'package:aoun/features/widgets/app_constants.dart';
 import 'package:aoun/features/widgets/custom_card_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,256 +20,107 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   final _formKey = GlobalKey<FormState>();
+  bool _isDonor = false;
 
-  final _fullNameController = TextEditingController();
+  // form controllers
+  final _foundationNameController = TextEditingController();
   final _emailController = TextEditingController();
   final _phoneController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
-  final _donationController = TextEditingController();
-  final _locationController = TextEditingController();
 
-  bool _isDonor = true;
-  bool _obscurePassword = true;
-  bool _obscureConfirmPassword = true;
+  // dropdown selections
+  String? _selectedFoundationType;
+  String? _selectedDonationType;
+  String? _selectedLocation;
 
   @override
   Widget build(BuildContext context) {
     return AuthBackground(
-      child: SingleChildScrollView(
-        child: Form(
-          key: _formKey,
-          child: CustomCardContainer(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  'Sign Up',
-                  style: AppTextStyle.heading(
-                    context,
-                    fontSize: 24,
-                    color: const Color(0xFFF6F6F6),
-                  ),
-                ),
-                SizedBox(height: 4.h),
-                Text(
-                  'Join Us\nCreate your account now',
-                  textAlign: TextAlign.center,
-                  style: AppTextStyle.body(
-                    context,
-                    color: Colors.grey[200]!,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          final isWide = constraints.maxWidth > 800;
+          final padding = EdgeInsets.symmetric(
+            horizontal: isWide ? constraints.maxWidth * 0.2 : 1.w,
+            vertical: 24.h,
+          );
 
-                SizedBox(height: 15.h),
-
-                Container(
-                  height: 40.h,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.r),
-                    color: Colors.white,
-                  ),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: GestureDetector(
-                          onTap: () => setState(() => _isDonor = true),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: _isDonor
-                                  ? AppColors.lightPrimary
-                                  : Colors.white,
-                              borderRadius: BorderRadius.circular(10.r),
-                            ),
-                            alignment: Alignment.center,
-                            child: Text(
-                              'Donor',
-                              style: AppTextStyle.body(
-                                context,
-                                color: _isDonor
-                                    ? Colors.white
-                                    : AppColors.lightPrimary,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: GestureDetector(
-                          onTap: () => setState(() => _isDonor = false),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: !_isDonor
-                                  ? AppColors.lightPrimary
-                                  : Colors.white,
-                              borderRadius: BorderRadius.circular(10.r),
-                            ),
-                            alignment: Alignment.center,
-                            child: Text(
-                              'Foundation',
-                              style: AppTextStyle.body(
-                                context,
-                                color: !_isDonor
-                                    ? Colors.white
-                                    : AppColors.lightPrimary,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-
-                SizedBox(height: 15.h),
-
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Basic Information:',
-                    style: AppTextStyle.body(
-                      context,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-
-                SizedBox(height: 8.h),
-
-                CustomTextField(
-                  controller: _fullNameController,
-                  label: 'Full Name',
-                  hint: 'Enter your full name',
-                ),
-                SizedBox(height: 10.h),
-
-                CustomTextField(
-                  controller: _emailController,
-                  label: 'Email',
-                  hint: 'Enter your email address',
-                  keyboardType: TextInputType.emailAddress,
-                ),
-                SizedBox(height: 10.h),
-
-                CustomTextField(
-                  controller: _phoneController,
-                  label: 'Phone',
-                  hint: 'Enter your phone number',
-                  keyboardType: TextInputType.phone,
-                ),
-                SizedBox(height: 10.h),
-
-                CustomTextField(
-                  controller: _passwordController,
-                  label: 'Password',
-                  hint: 'Enter your password',
-                  obscureText: _obscurePassword,
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      _obscurePassword
-                          ? Icons.visibility_off_rounded
-                          : Icons.visibility_rounded,
-                      color: Colors.grey[300],
-                    ),
-                    onPressed: () {
-                      setState(() => _obscurePassword = !_obscurePassword);
-                    },
-                  ),
-                ),
-                SizedBox(height: 10.h),
-
-                CustomTextField(
-                  controller: _confirmPasswordController,
-                  label: 'Confirm Password',
-                  hint: 'Re-enter your password',
-                  obscureText: _obscureConfirmPassword,
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                      _obscureConfirmPassword
-                          ? Icons.visibility_off_rounded
-                          : Icons.visibility_rounded,
-                      color: Colors.grey[300],
-                    ),
-                    onPressed: () {
-                      setState(
-                        () =>
-                            _obscureConfirmPassword = !_obscureConfirmPassword,
-                      );
-                    },
-                  ),
-                ),
-
-                SizedBox(height: 15.h),
-
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    'Preferences:',
-                    style: AppTextStyle.body(
-                      context,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 10.h),
-
-                CustomDropdownField(
-                  value: AppConstants.selectedDonation,
-                  items: AppConstants.donationOptions,
-                  hint: 'Preferred Donation',
-                  onChanged: (value) =>
-                      setState(() => AppConstants.selectedDonation = value!),
-                ),
-                SizedBox(height: 10.h),
-
-                CustomDropdownField(
-                  value: AppConstants.selectedLocation,
-                  items: AppConstants.locations,
-                  hint: 'Location',
-                  onChanged: (value) =>
-                      setState(() => AppConstants.selectedLocation = value!),
-                ),
-
-                SizedBox(height: 9.h),
-
-                SizedBox(height: 15.h),
-
-                PrimaryButton(text: 'Register', onPressed: _onRegister),
-
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+          return SingleChildScrollView(
+            padding: padding,
+            child: Form(
+              key: _formKey,
+              child: CustomCardContainer(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      "Already have an account?",
+                      'Sign Up',
+                      style: AppTextStyle.heading(
+                        context,
+                        fontSize: 24.sp,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 6.h),
+                    Text(
+                      'Join Us\nCreate your account now',
+                      textAlign: TextAlign.center,
                       style: AppTextStyle.body(
                         context,
                         color: Colors.grey[200]!,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    TextButton(
-                      onPressed: () =>
-                          Navigator.pushNamed(context, AppRoutes.login),
-                      child: Text(
-                        'Log in',
-                        style: AppTextStyle.custom(
-                          context,
-                          color: const Color(0xFFF6F6F6),
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
+                    SizedBox(height: 16.h),
+
+                    ToggleUserType(
+                      isDonor: _isDonor,
+                      onChanged: (val) => setState(() => _isDonor = val),
+                    ),
+
+                    SizedBox(height: 18.h),
+
+                    BasicInformationSection(
+                      isDonor: _isDonor,
+                      foundationNameController: _foundationNameController,
+                      emailController: _emailController,
+                      phoneController: _phoneController,
+                      passwordController: _passwordController,
+                      confirmPasswordController: _confirmPasswordController,
+                      selectedFoundationType: _selectedFoundationType,
+                      onFoundationTypeChanged: (val) =>
+                          setState(() => _selectedFoundationType = val),
+                    ),
+
+                    SizedBox(height: 18.h),
+
+                    PreferencesSection(
+                      selectedDonationType: _selectedDonationType,
+                      selectedLocation: _selectedLocation,
+                      onDonationChanged: (val) =>
+                          setState(() => _selectedDonationType = val),
+                      onLocationChanged: (val) =>
+                          setState(() => _selectedLocation = val),
+                    ),
+
+                    SizedBox(height: 18.h),
+
+                    PrimaryButton(
+                      text: 'Create Account',
+                      onPressed: _onRegister,
+                    ),
+                    SizedBox(height: 13.h),
+
+                    const BottomLoginText(
+                      txt: "Already have an account?",
+                      txtBtn: 'Sign In',
                     ),
                   ],
                 ),
-              ],
+              ),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }

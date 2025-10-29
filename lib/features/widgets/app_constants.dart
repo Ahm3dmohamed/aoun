@@ -26,24 +26,28 @@ class AppConstants {
     },
   ];
 
-  static String selectedDonation = 'Preferred Donation';
-  static String selectedLocation = 'Location';
-
   static List<String> donationOptions = [
-    'Food',
     'Clothes',
+    'Food',
     'Money',
-    'Medical Supplies',
     'Books',
+    'Medical Supplies',
+  ];
+  static List<String> foundationTypes = [
+    'Charity',
+    'Religious',
+    'Health',
+    'Educational',
+    'Environmental',
   ];
 
   static List<String> locations = [
-    'Riyadh',
-    'Jeddah',
-    'Dammam',
-    'Mecca',
-    'Medina',
-    'Tabuk',
-    'Abha',
+    'Cairo',
+    'Alexandria',
+    'Giza',
+    'Luxor',
+    'Aswan',
   ];
+  static String? selectedDonation;
+  static String? selectedLocation;
 }
