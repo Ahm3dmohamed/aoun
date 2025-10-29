@@ -25,4 +25,25 @@ class AppConstants {
       "donated": 200000,
     },
   ];
+
+  static String selectedDonation = 'Preferred Donation';
+  static String selectedLocation = 'Location';
+
+  static List<String> donationOptions = [
+    'Food',
+    'Clothes',
+    'Money',
+    'Medical Supplies',
+    'Books',
+  ];
+
+  static List<String> locations = [
+    'Riyadh',
+    'Jeddah',
+    'Dammam',
+    'Mecca',
+    'Medina',
+    'Tabuk',
+    'Abha',
+  ];
 }

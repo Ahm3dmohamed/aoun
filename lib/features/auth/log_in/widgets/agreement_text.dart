@@ -9,7 +9,11 @@ class AgreementText extends StatelessWidget {
     return Text.rich(
       TextSpan(
         text: 'I agree to the ',
-        style: AppTextStyle.body(context, color: Colors.white),
+        style: AppTextStyle.body(
+          context,
+          color: Colors.white,
+          fontWeight: FontWeight.w500,
+        ),
         children: [
           TextSpan(
             text: 'Terms & Conditions',

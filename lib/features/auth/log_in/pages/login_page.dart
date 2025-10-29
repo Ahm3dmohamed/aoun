@@ -12,6 +12,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../../widgets/custom_card_container.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -33,16 +35,7 @@ class _LoginPageState extends State<LoginPage> {
       child: SingleChildScrollView(
         child: Form(
           key: _formKey,
-          child: Container(
-            padding: EdgeInsets.all(16.w),
-            margin: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
-            decoration: BoxDecoration(
-              color: AppColors.cardColor.withOpacity(.6),
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(18.r),
-                topRight: Radius.circular(18.r),
-              ),
-            ),
+          child: CustomCardContainer(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -66,7 +59,11 @@ class _LoginPageState extends State<LoginPage> {
                 Text('Welcome Back', style: AppTextStyle.heading(context)),
                 Text(
                   'Continue your journey with Aoun.',
-                  style: AppTextStyle.body(context, color: Colors.grey[200]!),
+                  style: AppTextStyle.body(
+                    context,
+                    color: Colors.grey[200]!,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
                 SizedBox(height: 9.h),
 
@@ -151,6 +148,7 @@ class _LoginPageState extends State<LoginPage> {
                       style: AppTextStyle.body(
                         context,
                         color: Colors.grey[200]!,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                     TextButton(
