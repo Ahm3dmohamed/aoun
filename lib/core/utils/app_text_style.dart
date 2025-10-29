@@ -15,7 +15,6 @@ class AppTextStyle {
     return TextStyle(
       fontSize: context.resSP(fontSize),
       fontFamily: FontConstants.fontFamily,
-      fontWeight: fontWeight,
       color: color,
       height: height,
       decoration: decoration,
@@ -70,6 +69,7 @@ class AppTextStyle {
     BuildContext context, {
     double fontSize = 14,
     Color color = AppColors.grey,
+    required FontWeight fontWeight,
   }) {
     return _base(
       context,

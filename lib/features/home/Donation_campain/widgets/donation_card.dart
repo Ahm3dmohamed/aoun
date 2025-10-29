@@ -89,6 +89,7 @@ class DonationCard extends StatelessWidget {
                         context,
                         fontSize: 12,
                         color: Colors.grey[700]!,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                     Text(
@@ -97,6 +98,7 @@ class DonationCard extends StatelessWidget {
                         context,
                         fontSize: 12,
                         color: Colors.grey[700]!,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ],

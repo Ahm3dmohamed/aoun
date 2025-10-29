@@ -43,6 +43,7 @@ class OnBoardingDetails extends StatelessWidget {
             textAlign: TextAlign.center,
             style: AppTextStyle.body(
               context,
+              fontWeight: FontWeight.w500,
             ).copyWith(color: AppColors.lightCard),
           ),
         ],

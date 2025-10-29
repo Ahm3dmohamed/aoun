@@ -55,6 +55,7 @@ class HomePage extends StatelessWidget {
               style: AppTextStyle.body(
                 context,
                 color: Colors.white.withOpacity(0.9),
+                fontWeight: FontWeight.w500,
               ),
             ),
 
