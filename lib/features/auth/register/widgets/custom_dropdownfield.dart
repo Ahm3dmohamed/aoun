@@ -2,51 +2,64 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomDropdownField extends StatelessWidget {
-  final String? value;
-  final String? hint;
+  final String label;
+  final String hint;
   final List<String> items;
+  final String? value;
   final ValueChanged<String?> onChanged;
 
   const CustomDropdownField({
     super.key,
+    required this.label,
+    required this.hint,
     required this.items,
     required this.onChanged,
     this.value,
-    this.hint,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 4.h),
-      decoration: BoxDecoration(
-        color: Colors.white.withOpacity(.4),
-        borderRadius: BorderRadius.circular(34.r),
-      ),
-      child: DropdownButtonFormField<String>(
-        value: value,
-        decoration: InputDecoration(
-          border: InputBorder.none,
-          labelStyle: TextStyle(color: Colors.grey[700]),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          label,
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
-        dropdownColor: Colors.transparent,
-        icon: const Icon(Icons.keyboard_arrow_down_rounded, color: Colors.grey),
-        hint: hint != null
-            ? Text(hint!, style: const TextStyle(color: Colors.grey))
-            : null,
-        items: items
-            .map(
-              (option) => DropdownMenuItem<String>(
-                value: option,
-                child: Text(
-                  option,
-                  style: const TextStyle(color: Colors.white),
-                ),
-              ),
-            )
-            .toList(),
-        onChanged: onChanged,
-      ),
+        SizedBox(height: 6.h),
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 4.h),
+          decoration: BoxDecoration(
+            color: Colors.white.withOpacity(0.15),
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(color: Colors.white.withOpacity(0.3)),
+          ),
+          child: DropdownButton<String>(
+            isExpanded: true,
+            value: items.contains(value) ? value : null,
+            dropdownColor: Colors.transparent,
+            hint: Text(
+              hint,
+              style: TextStyle(color: Colors.white.withOpacity(0.7)),
+            ),
+            underline: const SizedBox(),
+            icon: const Icon(Icons.arrow_drop_down, color: Colors.white),
+            style: const TextStyle(color: Colors.white, fontSize: 16),
+            items: items
+                .map(
+                  (e) => DropdownMenuItem<String>(
+                    value: e,
+                    child: Text(e, style: const TextStyle(color: Colors.white)),
+                  ),
+                )
+                .toList(),
+            onChanged: onChanged,
+          ),
+        ),
+      ],
     );
   }
 }

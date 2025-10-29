@@ -7,6 +7,7 @@ import 'package:aoun/core/widgets/primary_btton.dart';
 import 'package:aoun/features/auth/log_in/widgets/agreement_text.dart';
 import 'package:aoun/features/auth/forgot_password/widgets/forget_password_text.dart';
 import 'package:aoun/features/auth/log_in/widgets/social_buttons.dart';
+import 'package:aoun/features/auth/register/widgets/bottom_login_text.dart';
 import 'package:aoun/features/splash/auth_background.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -140,30 +141,9 @@ class _LoginPageState extends State<LoginPage> {
 
                 SizedBox(height: 15.h),
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Don't have an account?",
-                      style: AppTextStyle.body(
-                        context,
-                        color: Colors.grey[200]!,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    TextButton(
-                      onPressed: () =>
-                          Navigator.pushNamed(context, AppRoutes.register),
-                      child: Text(
-                        'Sign Up',
-                        style: AppTextStyle.custom(
-                          context,
-                          color: const Color(0xFFF6F6F6),
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  ],
+                const BottomLoginText(
+                  txt: "Don't have an account?",
+                  txtBtn: 'Sign Up',
                 ),
               ],
             ),
