@@ -11,34 +11,11 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SplashBackground(
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Card(
-              color: Colors.transparent,
-
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Image.asset(
-                    'assets/img/splash_logo.png', // replace with your logo
-                    height: 50.h,
-                  ),
-                  IconButton(
-                    onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Menu tapped')),
-                      );
-                    },
-                    icon: const Icon(Icons.menu, color: Colors.white, size: 28),
-                  ),
-                ],
-              ),
-            ),
-
-            const Spacer(),
-
+            Image.asset('assets/img/splash_logo.png', height: 100.h),
             Text(
               "Help us support patients and those in need, bringing hope to their lives.",
               style: AppTextStyle.heading(
@@ -85,8 +62,6 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-
-            const Spacer(),
           ],
         ),
       ),

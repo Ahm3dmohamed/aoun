@@ -1,5 +1,5 @@
 import 'package:aoun/features/widgets/app_constants.dart';
-import 'package:aoun/features/home/Donation_campain/widgets/donation_card.dart';
+import 'package:aoun/features/Donation_campain/widgets/donation_card.dart';
 import 'package:aoun/features/splash/splash_background.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

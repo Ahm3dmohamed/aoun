@@ -26,7 +26,7 @@ class SplashBackground extends StatelessWidget {
               gradient: LinearGradient(
                 colors: [
                   AppColors.lightPrimary,
-                  Colors.teal.withOpacity(0.4),
+                  Colors.teal.withOpacity(0.3),
                   Colors.teal.withOpacity(0.6),
                   Colors.teal.withOpacity(0.8),
                 ],

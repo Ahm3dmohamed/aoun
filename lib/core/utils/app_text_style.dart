@@ -16,6 +16,7 @@ class AppTextStyle {
       fontSize: context.resSP(fontSize),
       fontFamily: FontConstants.fontFamily,
       color: color,
+      fontWeight: fontWeight,
       height: height,
       decoration: decoration,
     );
@@ -42,6 +43,7 @@ class AppTextStyle {
   static TextStyle heading(
     BuildContext context, {
     double fontSize = 22,
+
     Color color = AppColors.lightText,
   }) {
     return _base(

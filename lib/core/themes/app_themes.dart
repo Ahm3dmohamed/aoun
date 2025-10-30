@@ -7,7 +7,6 @@ class AppTheme {
     brightness: Brightness.light,
     primaryColor: AppColors.lightPrimary,
     scaffoldBackgroundColor: const Color(0xFF0E7C7B),
-
     // scaffoldBackgroundColor: AppColors.lightPrimary,
     appBarTheme: AppBarTheme(
       backgroundColor: AppColors.lightBackground,

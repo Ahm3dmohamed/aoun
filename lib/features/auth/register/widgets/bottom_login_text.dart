@@ -1,10 +1,14 @@
-import 'package:aoun/core/routing/app_routes.dart';
 import 'package:aoun/core/utils/app_text_style.dart';
 import 'package:flutter/material.dart';
 
 class BottomLoginText extends StatelessWidget {
-  const BottomLoginText({required this.txt, required this.txtBtn, super.key});
-
+  BottomLoginText({
+    required this.onPressed,
+    required this.txt,
+    required this.txtBtn,
+    super.key,
+  });
+  final void Function()? onPressed;
   final String txt;
   final String txtBtn;
 
@@ -22,7 +26,7 @@ class BottomLoginText extends StatelessWidget {
           ),
         ),
         TextButton(
-          onPressed: () => Navigator.pushNamed(context, AppRoutes.login),
+          onPressed: onPressed,
           child: Text(
             txtBtn,
             style: AppTextStyle.custom(

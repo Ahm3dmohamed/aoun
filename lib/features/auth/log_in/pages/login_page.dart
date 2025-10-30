@@ -141,9 +141,11 @@ class _LoginPageState extends State<LoginPage> {
 
                 SizedBox(height: 15.h),
 
-                const BottomLoginText(
+                BottomLoginText(
                   txt: "Don't have an account?",
                   txtBtn: 'Sign Up',
+                  onPressed: () =>
+                      Navigator.pushNamed(context, AppRoutes.register),
                 ),
               ],
             ),

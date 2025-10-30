@@ -30,7 +30,6 @@ class SocialButtons extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        // 🔴 Google
         _buildSocialButton(
           icon: FontAwesomeIcons.google,
           background: const Color(0xFFDB4437),
@@ -42,7 +41,6 @@ class SocialButtons extends StatelessWidget {
         ),
         SizedBox(width: 16.w),
 
-        // 🔵 Facebook
         _buildSocialButton(
           icon: FontAwesomeIcons.facebookF,
           background: const Color(0xFF1877F2),
@@ -54,7 +52,6 @@ class SocialButtons extends StatelessWidget {
         ),
         SizedBox(width: 16.w),
 
-        // ⚫ X (Twitter)
         _buildSocialButton(
           icon: FontAwesomeIcons.xTwitter,
           background: Colors.black,

@@ -4,6 +4,8 @@ import 'package:aoun/features/auth/log_in/pages/login_page.dart';
 import 'package:aoun/features/auth/register/pages/register_page.dart';
 import 'package:aoun/features/home/main_home_navigation.dart';
 import 'package:aoun/features/onboarding/pages/onboarding_page.dart';
+import 'package:aoun/features/profile/pages/profile_page.dart';
+import 'package:aoun/features/request_assistance/pages/request_assistance.dart';
 import 'package:aoun/features/splash/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +18,8 @@ class AppRoutes {
   static const String home = '/home';
   static const String resetPassword = '/reset_password';
   static const String forgotPassword = '/forgot_password';
+  static const String profile = '/profile';
+  static const String request = '/request';
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -29,10 +33,14 @@ class AppRoutes {
         return _buildRoute(const RegisterPage());
       case home:
         return _buildRoute(const MainHomeNavigation());
+      case request:
+        return _buildRoute(const RequestAssistancePage());
       case resetPassword:
         return _buildRoute(const ResetPasswordPage());
       case forgotPassword:
         return _buildRoute(const ForgotPasswordPage());
+      case profile:
+        return _buildRoute(const ProfilePage());
       default:
         return _errorRoute();
     }
