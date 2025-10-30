@@ -111,9 +111,11 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     SizedBox(height: 13.h),
 
-                    const BottomLoginText(
+                    BottomLoginText(
                       txt: "Already have an account?",
                       txtBtn: 'Sign In',
+                      onPressed: () =>
+                          Navigator.pushNamed(context, AppRoutes.login),
                     ),
                   ],
                 ),
