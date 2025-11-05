@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 import '../request_assistance/pages/request_assistance.dart';
 
 class AppConstants {
-  static List<Widget> pages = const [
-    HomePage(),
-    DonationCampaignsPage(),
-    RequestAssistancePage(),
+  static List<Widget> pages = [
+    const HomePage(),
+    const DonationCampaignsPage(),
+    const RequestAssistancePage(),
     ProfilePage(),
   ];
   static List<Map<String, dynamic>> campaigns = [

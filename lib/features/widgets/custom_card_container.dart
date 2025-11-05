@@ -10,7 +10,7 @@ class CustomCardContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16.w),
+      padding: EdgeInsets.all(8.w),
       margin: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
       decoration: BoxDecoration(
         color: AppColors.cardColor.withOpacity(.6),
