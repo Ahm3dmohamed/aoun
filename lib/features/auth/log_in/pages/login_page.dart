@@ -39,6 +39,7 @@ class _LoginPageState extends State<LoginPage> {
           child: CustomCardContainer(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // Header
                 Row(

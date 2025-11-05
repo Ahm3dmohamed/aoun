@@ -40,7 +40,7 @@ class AppRoutes {
       case forgotPassword:
         return _buildRoute(const ForgotPasswordPage());
       case profile:
-        return _buildRoute(const ProfilePage());
+        return _buildRoute(ProfilePage());
       default:
         return _errorRoute();
     }
