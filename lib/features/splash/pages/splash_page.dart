@@ -1,9 +1,7 @@
 import 'dart:async';
 import 'package:aoun/core/utils/responsive_extension.dart';
-import 'package:aoun/core/utils/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:aoun/core/utils/app_images.dart';
-import 'package:aoun/core/utils/style_manager.dart';
 import 'package:aoun/core/routing/app_routes.dart';
 
 class SplashPage extends StatefulWidget {

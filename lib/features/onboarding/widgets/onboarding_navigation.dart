@@ -1,3 +1,4 @@
+import 'package:aoun/core/extensions/localization_extension.dart';
 import 'package:aoun/core/utils/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,7 +37,7 @@ class OnBoardingNavigation extends StatelessWidget {
             child: TextButton(
               onPressed: onSkip,
               child: Text(
-                'Skip',
+                context.l10n.skip,
                 style: AppTextStyle.custom(
                   context,
                   color: Colors.white,

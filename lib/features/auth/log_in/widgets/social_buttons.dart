@@ -33,33 +33,21 @@ class SocialButtons extends StatelessWidget {
         _buildSocialButton(
           icon: FontAwesomeIcons.google,
           background: const Color(0xFFDB4437),
-          onTap: () {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Google sign-in tapped')),
-            );
-          },
+          onTap: () {},
         ),
         SizedBox(width: 16.w),
 
         _buildSocialButton(
           icon: FontAwesomeIcons.facebookF,
           background: const Color(0xFF1877F2),
-          onTap: () {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text('Facebook sign-in tapped')),
-            );
-          },
+          onTap: () {},
         ),
         SizedBox(width: 16.w),
 
         _buildSocialButton(
           icon: FontAwesomeIcons.xTwitter,
           background: Colors.black,
-          onTap: () {
-            ScaffoldMessenger.of(
-              context,
-            ).showSnackBar(const SnackBar(content: Text('X sign-in tapped')));
-          },
+          onTap: () {},
         ),
       ],
     );

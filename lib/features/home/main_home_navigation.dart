@@ -1,5 +1,7 @@
+import 'package:aoun/core/extensions/localization_extension.dart';
 import 'package:aoun/core/themes/app_colors.dart';
 import 'package:aoun/features/widgets/app_constants.dart';
+import 'package:aoun/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class MainHomeNavigation extends StatefulWidget {
@@ -14,12 +16,14 @@ class _MainHomeNavigationState extends State<MainHomeNavigation> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = context.l10n;
+
     return Scaffold(
       extendBody: true,
       body: AppConstants.pages[_currentIndex],
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.4), // semi-transparent overlay
+          color: Colors.black.withOpacity(0.4),
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(20),
             topRight: Radius.circular(20),
@@ -35,20 +39,20 @@ class _MainHomeNavigationState extends State<MainHomeNavigation> {
           onTap: (index) => setState(() => _currentIndex = index),
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home_rounded),
-              label: "Home",
+              icon: const Icon(Icons.home_rounded),
+              label: loc.navHome,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.volunteer_activism_rounded),
-              label: "Donation Campaigns",
+              icon: const Icon(Icons.volunteer_activism_rounded),
+              label: loc.navDonationCampaigns,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.health_and_safety_sharp),
-              label: "Request Assistance",
+              icon: const Icon(Icons.health_and_safety_sharp),
+              label: loc.navRequestAssistance,
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person_2_rounded),
-              label: "Profile",
+              icon: const Icon(Icons.person_2_rounded),
+              label: loc.navProfile,
             ),
           ],
         ),
