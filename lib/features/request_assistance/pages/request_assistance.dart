@@ -1,7 +1,9 @@
 import 'dart:io';
 
+import 'package:aoun/core/extensions/localization_extension.dart';
 import 'package:aoun/features/profile/widgets/pick_image_option_sheet.dart';
 import 'package:aoun/features/splash/splash_background.dart';
+import 'package:aoun/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
@@ -68,101 +70,110 @@ class _RequestAssistancePageState extends State<RequestAssistancePage> {
   @override
   Widget build(BuildContext context) {
     return SplashBackground(
-      child: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 28.h),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                "Request Assistance",
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 30.h),
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height - 100.h,
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  context.l10n.requestAssistance,
+                  style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              SizedBox(height: 15.h),
+                SizedBox(height: 15.h),
 
-              Form(
-                key: _formKey,
-                child: Column(
-                  children: [
-                    _buildTextField(_foundationController, "Foundation Name"),
-                    SizedBox(height: 14.h),
-                    _buildTextField(_locationController, "Location"),
-                    SizedBox(height: 14.h),
-                    _buildTextField(_titleController, "Title"),
-                    SizedBox(height: 14.h),
-                    _buildTextField(
-                      _descriptionController,
-                      "Description",
-                      maxLines: 3,
-                    ),
-                    SizedBox(height: 18.h),
+                Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      _buildTextField(
+                        _foundationController,
+                        context.l10n.foundationName,
+                      ),
+                      SizedBox(height: 14.h),
+                      _buildTextField(
+                        _locationController,
+                        context.l10n.location,
+                      ),
+                      SizedBox(height: 14.h),
+                      _buildTextField(_titleController, context.l10n.title),
+                      SizedBox(height: 14.h),
+                      _buildTextField(
+                        _descriptionController,
+                        context.l10n.description,
+                        maxLines: 3,
+                      ),
+                      SizedBox(height: 18.h),
 
-                    InkWell(
-                      onTap: _showPickOptionsDialog,
-                      child: Container(
-                        padding: const EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.8),
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: Colors.blueAccent),
-                        ),
-                        child: Column(
-                          children: [
-                            const Icon(
-                              Icons.cloud_upload,
-                              size: 25,
-                              color: Colors.blueAccent,
-                            ),
-                            SizedBox(height: 9.h),
-                            Text(
-                              uploadedFileName ?? "Upload file",
-                              style: const TextStyle(
-                                fontSize: 10,
+                      InkWell(
+                        onTap: _showPickOptionsDialog,
+                        child: Container(
+                          padding: const EdgeInsets.all(16),
+                          decoration: BoxDecoration(
+                            color: Colors.white.withOpacity(0.8),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(color: Colors.blueAccent),
+                          ),
+                          child: Column(
+                            children: [
+                              const Icon(
+                                Icons.cloud_upload,
+                                size: 25,
                                 color: Colors.blueAccent,
                               ),
+                              SizedBox(height: 9.h),
+                              Text(
+                                uploadedFileName ?? context.l10n.uploadFile,
+                                style: const TextStyle(
+                                  fontSize: 10,
+                                  color: Colors.blueAccent,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
+                      SizedBox(height: 13.h),
+                      _buildTextField(
+                        _amountController,
+                        context.l10n.requiredAmount,
+                        keyboardType: TextInputType.number,
+                      ),
+                      SizedBox(height: 18.h),
+
+                      SizedBox(
+                        width: double.infinity,
+                        height: 40,
+                        child: ElevatedButton(
+                          onPressed: _submitForm,
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.greenAccent[400],
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25),
                             ),
-                          ],
-                        ),
-                      ),
-                    ),
-
-                    SizedBox(height: 13.h),
-                    _buildTextField(
-                      _amountController,
-                      "Required Amount With \$",
-                      keyboardType: TextInputType.number,
-                    ),
-                    SizedBox(height: 18.h),
-
-                    SizedBox(
-                      width: double.infinity,
-                      height: 40,
-                      child: ElevatedButton(
-                        onPressed: _submitForm,
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.greenAccent[400],
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(25),
                           ),
-                        ),
-                        child: const Text(
-                          "Send",
-                          style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
+                          child: Text(
+                            context.l10n.send,
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
@@ -179,8 +190,10 @@ class _RequestAssistancePageState extends State<RequestAssistancePage> {
       controller: controller,
       maxLines: maxLines,
       keyboardType: keyboardType,
-      validator: (value) =>
-          (value == null || value.isEmpty) ? "Please enter $label" : null,
+      validator: (value) => (value == null || value.isEmpty)
+          ? context.l10n.validationMessage(label)
+          : null,
+
       decoration: InputDecoration(
         hintText: label,
         filled: true,

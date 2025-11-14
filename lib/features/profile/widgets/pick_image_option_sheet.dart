@@ -1,3 +1,4 @@
+import 'package:aoun/core/extensions/localization_extension.dart';
 import 'package:flutter/material.dart';
 
 class PickImageOptionsSheet extends StatelessWidget {
@@ -17,7 +18,7 @@ class PickImageOptionsSheet extends StatelessWidget {
         children: <Widget>[
           ListTile(
             leading: const Icon(Icons.photo_library, color: Colors.teal),
-            title: const Text('Photo Library'),
+            title: Text(context.l10n.photoLibrary),
             onTap: () {
               Navigator.of(context).pop();
               onGalleryTap();
@@ -25,7 +26,7 @@ class PickImageOptionsSheet extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.photo_camera, color: Colors.teal),
-            title: const Text('Camera'),
+            title: Text(context.l10n.camera),
             onTap: () {
               Navigator.of(context).pop();
               onCameraTap();

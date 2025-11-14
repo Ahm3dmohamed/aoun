@@ -1,6 +1,8 @@
+import 'package:aoun/core/extensions/localization_extension.dart';
 import 'package:aoun/core/utils/app_text_style.dart';
 import 'package:aoun/features/auth/register/widgets/custom_dropdownfield.dart';
 import 'package:aoun/features/widgets/app_constants.dart';
+import 'package:aoun/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -24,7 +26,7 @@ class PreferencesSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Preferences:',
+          context.l10n.preferences,
           style: AppTextStyle.body(
             context,
             color: Colors.white,
@@ -34,18 +36,18 @@ class PreferencesSection extends StatelessWidget {
         ),
         SizedBox(height: 10.h),
         CustomDropdownField(
-          label: "Required Donation",
+          label: context.l10n.requiredDonation,
           value: selectedDonationType,
-          items: AppConstants.donationOptions,
-          hint: 'Select required donation',
+          items: AppConstants.donationOptions(context),
+          hint: context.l10n.selectRequiredDonation,
           onChanged: onDonationChanged,
         ),
         SizedBox(height: 10.h),
         CustomDropdownField(
-          label: "Location",
+          label: context.l10n.location,
           value: selectedLocation,
-          items: AppConstants.locations,
-          hint: 'Select your location',
+          items: AppConstants.locations(context),
+          hint: context.l10n.selectLocation,
           onChanged: onLocationChanged,
         ),
       ],

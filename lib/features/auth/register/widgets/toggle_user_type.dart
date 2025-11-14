@@ -1,5 +1,7 @@
+import 'package:aoun/core/extensions/localization_extension.dart';
 import 'package:aoun/core/themes/app_colors.dart';
 import 'package:aoun/core/utils/app_text_style.dart';
+import 'package:aoun/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -23,8 +25,8 @@ class ToggleUserType extends StatelessWidget {
       ),
       child: Row(
         children: [
-          _buildButton(context, 'Donor', isDonor, true),
-          _buildButton(context, 'Foundation', !isDonor, false),
+          _buildButton(context, context.l10n.donor, isDonor, true),
+          _buildButton(context, context.l10n.foundation, !isDonor, false),
         ],
       ),
     );

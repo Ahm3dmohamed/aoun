@@ -13,10 +13,10 @@ class DonationCampaignsPage extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 16.w),
         child: ListView.builder(
-          itemCount: AppConstants.campaigns.length,
+          itemCount: AppConstants.campaigns(context).length,
           physics: const BouncingScrollPhysics(),
           itemBuilder: (context, index) {
-            final campaign = AppConstants.campaigns[index];
+            final campaign = AppConstants.campaigns(context)[index];
             return Padding(
               padding: EdgeInsets.only(bottom: 16.h),
               child: DonationCard(

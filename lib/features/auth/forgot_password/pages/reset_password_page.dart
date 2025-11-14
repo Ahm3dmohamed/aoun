@@ -1,8 +1,10 @@
+import 'package:aoun/core/extensions/localization_extension.dart';
 import 'package:aoun/core/utils/app_images.dart';
 import 'package:aoun/core/utils/app_text_style.dart';
 import 'package:aoun/core/widgets/custom_textfield.dart';
 import 'package:aoun/core/widgets/primary_btton.dart';
 import 'package:aoun/features/splash/auth_background.dart';
+import 'package:aoun/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -22,6 +24,8 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
 
   @override
   Widget build(BuildContext context) {
+    final loc = context.l10n;
+
     return AuthBackground(
       child: Center(
         child: SingleChildScrollView(
@@ -48,15 +52,15 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                   SizedBox(height: 20.h),
 
                   Text(
-                    'Change Your Password',
+                    loc.resetYourPassword,
                     style: AppTextStyle.heading(context, fontSize: 22),
                   ),
                   SizedBox(height: 20.h),
 
                   CustomTextField(
                     controller: _newPasswordController,
-                    label: 'New Password',
-                    hint: 'Enter your new password',
+                    label: loc.reEnterPassword,
+                    hint: loc.reEnterPassword,
                     obscureText: _obscure1,
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -68,10 +72,10 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter a new password';
+                        return loc.reEnterPassword;
                       }
                       if (value.length < 6) {
-                        return 'Password must be at least 6 characters';
+                        return loc.passwordsDoNotMatch;
                       }
                       return null;
                     },
@@ -80,8 +84,8 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
 
                   CustomTextField(
                     controller: _confirmPasswordController,
-                    label: 'Confirm Password',
-                    hint: 'Re-enter your new password',
+                    label: loc.confirmPassword,
+                    hint: loc.reEnterPassword,
                     obscureText: _obscure2,
                     suffixIcon: IconButton(
                       icon: Icon(
@@ -93,10 +97,10 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please confirm your password';
+                        return loc.pleaseConfirmPassword;
                       }
                       if (value != _newPasswordController.text) {
-                        return 'Passwords do not match';
+                        return loc.passwordsDoNotMatch;
                       }
                       return null;
                     },
@@ -104,15 +108,11 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                   SizedBox(height: 20.h),
 
                   PrimaryButton(
-                    text: 'Save',
+                    text: loc.save,
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text(
-                              'Password has been reset successfully',
-                            ),
-                          ),
+                          SnackBar(content: Text(loc.passwordResetSuccess)),
                         );
                         Navigator.pop(context);
                         Navigator.pop(context);

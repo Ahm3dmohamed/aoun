@@ -1,7 +1,7 @@
+import 'package:aoun/core/extensions/localization_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:aoun/core/routing/app_routes.dart';
 import 'package:aoun/core/utils/app_images.dart';
-import 'package:aoun/core/utils/style_manager.dart';
 import 'package:aoun/features/onboarding/widgets/onboarding_detailes.dart';
 import 'package:aoun/features/onboarding/widgets/onboarding_navigation.dart';
 
@@ -26,36 +26,16 @@ class _OnboardingPageState extends State<OnboardingPage>
     [Color(0xFF11998E), Color(0xFF38EF7D)],
   ];
 
-  late final List<OnBoardingDetails> pages;
+  late List<OnBoardingDetails> pages;
 
   @override
   void initState() {
     super.initState();
+
     _arrowController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 800),
     )..repeat(reverse: true);
-
-    pages = [
-      const OnBoardingDetails(
-        image: AppImages.onboarding1,
-        title: "Support Each Other",
-        desc:
-            "Join hands with Aoun to bring hope and care to people in need. Together, we make compassion a habit.",
-      ),
-      const OnBoardingDetails(
-        image: AppImages.onboarding2,
-        title: "Easy & Trusted Donations",
-        desc:
-            "Contribute to verified causes effortlessly. Every donation you make directly reaches those who need it most.",
-      ),
-      const OnBoardingDetails(
-        image: AppImages.onboarding3,
-        title: "Make a Difference",
-        desc:
-            "Your small act of kindness can create a lasting impact and change lives for the better.",
-      ),
-    ];
   }
 
   @override
@@ -67,6 +47,26 @@ class _OnboardingPageState extends State<OnboardingPage>
 
   @override
   Widget build(BuildContext context) {
+    final t = context.l10n;
+
+    pages = [
+      OnBoardingDetails(
+        image: AppImages.onboarding1,
+        title: t.onboardTitle1,
+        desc: t.onboardDesc1,
+      ),
+      OnBoardingDetails(
+        image: AppImages.onboarding2,
+        title: t.onboardTitle2,
+        desc: t.onboardDesc2,
+      ),
+      OnBoardingDetails(
+        image: AppImages.onboarding3,
+        title: t.onboardTitle3,
+        desc: t.onboardDesc3,
+      ),
+    ];
+
     return Scaffold(
       body: AnimatedContainer(
         duration: const Duration(milliseconds: 600),
@@ -91,19 +91,10 @@ class _OnboardingPageState extends State<OnboardingPage>
                 },
                 itemBuilder: (_, index) => AnimatedSwitcher(
                   duration: const Duration(milliseconds: 600),
-                  transitionBuilder: (child, animation) => FadeTransition(
-                    opacity: animation,
-                    child: SlideTransition(
-                      position: Tween<Offset>(
-                        begin: const Offset(0.1, 0),
-                        end: Offset.zero,
-                      ).animate(animation),
-                      child: child,
-                    ),
-                  ),
                   child: pages[index],
                 ),
               ),
+
               Positioned.fill(
                 child: OnBoardingNavigation(
                   controller: _controller,

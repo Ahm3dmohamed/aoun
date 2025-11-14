@@ -1,3 +1,4 @@
+import 'package:aoun/core/extensions/localization_extension.dart';
 import 'package:aoun/core/routing/app_routes.dart';
 import 'package:aoun/core/themes/app_colors.dart';
 import 'package:aoun/core/utils/app_text_style.dart';
@@ -8,6 +9,7 @@ import 'package:aoun/features/auth/register/widgets/toggle_user_type.dart';
 import 'package:aoun/features/auth/register/widgets/bottom_login_text.dart';
 import 'package:aoun/features/splash/auth_background.dart';
 import 'package:aoun/features/widgets/custom_card_container.dart';
+import 'package:aoun/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -54,7 +56,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      'Sign Up',
+                      context.l10n.signUp,
                       style: AppTextStyle.heading(
                         context,
                         fontSize: 24.sp,
@@ -63,7 +65,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                     SizedBox(height: 6.h),
                     Text(
-                      'Join Us\nCreate your account now',
+                      context.l10n.joinUs,
                       textAlign: TextAlign.center,
                       style: AppTextStyle.body(
                         context,
@@ -106,14 +108,14 @@ class _RegisterPageState extends State<RegisterPage> {
                     SizedBox(height: 18.h),
 
                     PrimaryButton(
-                      text: 'Create Account',
+                      text: context.l10n.createAccount,
                       onPressed: _onRegister,
                     ),
                     SizedBox(height: 13.h),
 
                     BottomLoginText(
-                      txt: "Already have an account?",
-                      txtBtn: 'Sign In',
+                      txt: context.l10n.alreadyHaveAccount,
+                      txtBtn: context.l10n.signIn,
                       onPressed: () =>
                           Navigator.pushNamed(context, AppRoutes.login),
                     ),
@@ -132,7 +134,9 @@ class _RegisterPageState extends State<RegisterPage> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            '${_isDonor ? "Donor" : "Foundation"} account registered successfully!',
+            _isDonor
+                ? context.l10n.donorAccountSuccess
+                : context.l10n.foundationAccountSuccess,
           ),
         ),
       );

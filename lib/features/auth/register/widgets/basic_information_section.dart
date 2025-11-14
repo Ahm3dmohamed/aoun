@@ -1,7 +1,9 @@
+import 'package:aoun/core/extensions/localization_extension.dart';
 import 'package:aoun/core/utils/app_text_style.dart';
 import 'package:aoun/core/widgets/custom_textfield.dart';
 import 'package:aoun/features/auth/register/widgets/custom_dropdownfield.dart';
 import 'package:aoun/features/widgets/app_constants.dart';
+import 'package:aoun/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -42,7 +44,7 @@ class _BasicInformationSectionState extends State<BasicInformationSection> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Basic Information:',
+          context.l10n.basicInformation,
           style: AppTextStyle.body(
             context,
             color: Colors.white,
@@ -55,47 +57,47 @@ class _BasicInformationSectionState extends State<BasicInformationSection> {
         if (!widget.isDonor) ...[
           CustomTextField(
             controller: widget.foundationNameController,
-            label: 'Foundation Name',
-            hint: 'Enter foundation name',
+            label: context.l10n.foundationName,
+            hint: context.l10n.foundationName,
           ),
           SizedBox(height: 10.h),
           CustomDropdownField(
-            label: "Type of Foundation",
+            label: context.l10n.typeOfFoundation,
             value: widget.selectedFoundationType,
-            items: AppConstants.foundationTypes,
-            hint: 'Select type',
+            items: AppConstants.foundationTypes(context),
+            hint: context.l10n.selectType,
             onChanged: widget.onFoundationTypeChanged,
           ),
           SizedBox(height: 10.h),
         ] else ...[
           CustomTextField(
             controller: widget.foundationNameController,
-            label: 'Full Name',
-            hint: 'Enter your full name',
+            label: context.l10n.fullName,
+            hint: context.l10n.enterFullName,
           ),
           SizedBox(height: 10.h),
         ],
 
         CustomTextField(
           controller: widget.emailController,
-          label: 'Email',
-          hint: 'Enter your email address',
+          label: context.l10n.email,
+          hint: context.l10n.email,
           keyboardType: TextInputType.emailAddress,
         ),
         SizedBox(height: 10.h),
 
         CustomTextField(
           controller: widget.phoneController,
-          label: 'Phone',
-          hint: 'Enter your phone number',
+          label: context.l10n.phone,
+          hint: context.l10n.phone,
           keyboardType: TextInputType.phone,
         ),
         SizedBox(height: 10.h),
 
         CustomTextField(
           controller: widget.passwordController,
-          label: 'Password',
-          hint: 'Enter your password',
+          label: context.l10n.password,
+          hint: context.l10n.password,
           obscureText: _obscurePassword,
           suffixIcon: IconButton(
             icon: Icon(
@@ -112,8 +114,8 @@ class _BasicInformationSectionState extends State<BasicInformationSection> {
 
         CustomTextField(
           controller: widget.confirmPasswordController,
-          label: 'Confirm Password',
-          hint: 'Re-enter your password',
+          label: context.l10n.confirmPassword,
+          hint: context.l10n.confirmPassword,
           obscureText: _obscureConfirm,
           suffixIcon: IconButton(
             icon: Icon(

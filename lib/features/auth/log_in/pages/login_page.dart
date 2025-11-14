@@ -1,3 +1,4 @@
+import 'package:aoun/core/extensions/localization_extension.dart';
 import 'package:aoun/core/routing/app_routes.dart';
 import 'package:aoun/core/themes/app_colors.dart';
 import 'package:aoun/core/utils/app_images.dart';
@@ -9,9 +10,9 @@ import 'package:aoun/features/auth/forgot_password/widgets/forget_password_text.
 import 'package:aoun/features/auth/log_in/widgets/social_buttons.dart';
 import 'package:aoun/features/auth/register/widgets/bottom_login_text.dart';
 import 'package:aoun/features/splash/auth_background.dart';
+import 'package:aoun/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../../widgets/custom_card_container.dart';
 
@@ -41,12 +42,11 @@ class _LoginPageState extends State<LoginPage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Header
                 Row(
                   children: [
                     const Spacer(),
                     Text(
-                      '       Sign in',
+                      context.l10n.signIn,
                       style: AppTextStyle.heading(
                         context,
                         fontSize: 26,
@@ -58,22 +58,25 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
 
-                Text('Welcome Back', style: AppTextStyle.heading(context)),
                 Text(
-                  'Continue your journey with Aoun.',
+                  context.l10n.welcomeBack,
+                  style: AppTextStyle.heading(context),
+                ),
+                Text(
+                  context.l10n.continueJourney,
                   style: AppTextStyle.body(
                     context,
                     color: Colors.grey[200]!,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                SizedBox(height: 9.h),
+                SizedBox(height: 18.h),
 
                 // Email Field
                 CustomTextField(
                   controller: _emailController,
-                  label: 'Email',
-                  hint: 'Enter your email address',
+                  label: context.l10n.email,
+                  hint: context.l10n.enterEmail,
                   keyboardType: TextInputType.emailAddress,
                 ),
                 SizedBox(height: 20.h),
@@ -81,8 +84,8 @@ class _LoginPageState extends State<LoginPage> {
                 // Password Field
                 CustomTextField(
                   controller: _passwordController,
-                  label: 'Password',
-                  hint: 'Enter your password',
+                  label: context.l10n.password,
+                  hint: context.l10n.enterPassword,
                   obscureText: _obscurePassword,
                   suffixIcon: IconButton(
                     icon: Icon(
@@ -115,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 9.h),
 
                 PrimaryButton(
-                  text: 'Login',
+                  text: context.l10n.login,
                   onPressed: () {
                     _goToHome(context);
                   },
@@ -123,28 +126,28 @@ class _LoginPageState extends State<LoginPage> {
                 ForgetPasswordText(),
 
                 Row(
-                  children: const [
-                    Expanded(child: Divider(color: Colors.white54)),
+                  children: [
+                    const Expanded(child: Divider(color: Colors.white54)),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
-                        'Or continue with',
-                        style: TextStyle(color: Colors.white70),
+                        context.l10n.orContinueWith,
+                        style: const TextStyle(color: Colors.white70),
                       ),
                     ),
-                    Expanded(child: Divider(color: Colors.white54)),
+                    const Expanded(child: Divider(color: Colors.white54)),
                   ],
                 ),
 
-                SizedBox(height: 15.h),
+                SizedBox(height: 20.h),
 
                 SocialButtons(),
 
                 SizedBox(height: 15.h),
 
                 BottomLoginText(
-                  txt: "Don't have an account?",
-                  txtBtn: 'Sign Up',
+                  txt: context.l10n.dontHaveAccount,
+                  txtBtn: context.l10n.signUp,
                   onPressed: () =>
                       Navigator.pushNamed(context, AppRoutes.register),
                 ),

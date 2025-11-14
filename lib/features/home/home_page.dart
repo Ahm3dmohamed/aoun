@@ -1,6 +1,8 @@
+import 'package:aoun/core/extensions/localization_extension.dart';
 import 'package:aoun/core/themes/app_colors.dart';
 import 'package:aoun/core/utils/app_text_style.dart';
 import 'package:aoun/features/splash/splash_background.dart';
+import 'package:aoun/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -9,6 +11,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final loc = context.l10n;
+
     return SplashBackground(
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
@@ -16,24 +20,27 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/img/splash_logo.png', height: 100.h),
+
             Text(
-              "Help us support patients and those in need, bringing hope to their lives.",
+              loc.homeIntroTitle,
               style: AppTextStyle.heading(
                 context,
                 fontSize: 20,
                 color: Colors.white,
               ),
+              textAlign: TextAlign.center,
             ),
 
             SizedBox(height: 10.h),
 
             Text(
-              "With your support, we can secure surgeries and essential treatments to save their lives and grant them a better future.",
+              loc.homeIntroSubtitle,
               style: AppTextStyle.body(
                 context,
                 color: Colors.white.withOpacity(0.9),
                 fontWeight: FontWeight.w500,
               ),
+              textAlign: TextAlign.center,
             ),
 
             SizedBox(height: 25.h),
@@ -48,12 +55,12 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Donate button tapped')),
-                );
+                ScaffoldMessenger.of(
+                  context,
+                ).showSnackBar(SnackBar(content: Text(loc.donateTapped)));
               },
               child: Text(
-                "Donate Now",
+                loc.donateNow,
                 style: AppTextStyle.custom(
                   context,
                   fontSize: 15,
