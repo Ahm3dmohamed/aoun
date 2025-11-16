@@ -219,7 +219,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get onboardDesc3 => 'عملك الصغير يمكن أن يترك أثرًا كبيرًا ويغير حياة الآخرين للأفضل.';
 
   @override
-  String get skip => 'Skip';
+  String get skip => 'تخطي';
 
   @override
   String get reEnterPassword => 'أعد إدخال كلمة المرور';
