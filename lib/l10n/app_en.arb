@@ -73,6 +73,7 @@
 "onboardTitle3": "Make a Difference",
 "onboardDesc3": "Your small act of kindness can create a lasting impact and change lives for the better.",
  "skip":"Skip",
+  "@skip": {},
   "reEnterPassword": "Re-enter your new password",
   "pleaseConfirmPassword": "Please confirm your password",
   "passwordsDoNotMatch": "Passwords do not match",
