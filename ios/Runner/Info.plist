@@ -6,6 +6,10 @@
     <string>We need to access your camera</string>
     <key>NSPhotoLibraryUsageDescription</key>
     <string>We need to access your photo library</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Aoun needs location access to find nearby hospitals, foundations, and donation opportunities.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Aoun needs location access to map nearby aid resources and provide route navigation.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

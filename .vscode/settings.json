@@ -1,3 +1,4 @@
 {
-    "dart.flutterSdkPath": "C:\\Users\\user\\flutter_path\\flutter"
+    "dart.flutterSdkPath": "C:\\flutter",
+    "build-runner.flutterPath": null
 }

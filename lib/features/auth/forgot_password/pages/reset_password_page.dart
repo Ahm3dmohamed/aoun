@@ -4,7 +4,6 @@ import 'package:aoun/core/utils/app_text_style.dart';
 import 'package:aoun/core/widgets/custom_textfield.dart';
 import 'package:aoun/core/widgets/primary_btton.dart';
 import 'package:aoun/features/splash/auth_background.dart';
-import 'package:aoun/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

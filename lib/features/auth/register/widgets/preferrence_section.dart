@@ -2,7 +2,6 @@ import 'package:aoun/core/extensions/localization_extension.dart';
 import 'package:aoun/core/utils/app_text_style.dart';
 import 'package:aoun/features/auth/register/widgets/custom_dropdownfield.dart';
 import 'package:aoun/features/widgets/app_constants.dart';
-import 'package:aoun/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -35,10 +34,11 @@ class PreferencesSection extends StatelessWidget {
           ),
         ),
         SizedBox(height: 10.h),
+        // Use itemsMap so we display localized labels but send API values
         CustomDropdownField(
           label: context.l10n.requiredDonation,
           value: selectedDonationType,
-          items: AppConstants.donationOptions(context),
+          itemsMap: AppConstants.donationOptionsMap(context),
           hint: context.l10n.selectRequiredDonation,
           onChanged: onDonationChanged,
         ),

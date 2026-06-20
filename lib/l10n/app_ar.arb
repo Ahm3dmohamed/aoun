@@ -16,7 +16,7 @@
   "termsConditions": "الشروط والأحكام",
    "photoLibrary": "معرض الصور",
   "camera": "الكاميرا",
-
+   "chatbot":"شات بوت",
   "tapToUploadPhoto": "اضغط بالأعلى لرفع صورتك",
 
   "recommendedDonations": "التبرعات الموصى بها",
@@ -40,16 +40,17 @@
   "donateNow": "تبرع الآن",
 
   "navHome": "الرئيسية",
-  "navDonationCampaigns": "حملات التبرع",
+  "navDonationRecommended": "التبرعات الموصي بها ",
   "navRequestAssistance": "طلب مساعدة",
   "navProfile": "الملف الشخصي",
-
+  "navMaps": "الخرائط",
   "remaining": "متبقي",
   "donated": "تم التبرع",
   "donate": "تبرع الآن",
 
   "campaignMedicalSupplies": "توفير المعدات والإمدادات الطبية",
 
+  "donationBlood": "دم",
   "donationClothes": "ملابس",
   "donationFood": "طعام",
   "donationMoney": "مال",
@@ -130,9 +131,27 @@
   "formSubmitted": "تم إرسال طلب المساعدة",
   "@formSubmitted": {},
   "validationMessage": "يرجى إدخال {field}",
+  "welcomeBack": "مرحبا بعودتك،",
+  "howCanWeHelp": "كيف يمكننا مساعدتك؟",
+  "healthServices": "الخدمات الصحية",
+  "dailyHealthTip": "نصيحة صحية يومية",
+  "doctor": "طبيب",
+  "medicine": "دواء",
+  "reports": "التقارير",
+  "chatTitle": "الدردشة مع عون",
+  "history": "تاريخ الدردشة",
+   "addCaption": "إضافة تسمية",
+  "typeOrSpeak": "اكتب أو تحدث...",
+  "emergency": "طوارئ",
+    "aiSymptomChecker": "مدقق الأعراض بالذكاء الاصطناعي",
+  "describeFeel": "صف شعورك ودع الذكاء الاصطناعي يقدم لك الإرشاد.",
+  "startFreeConsultation": "ابدأ استشارة مجانية",
+  "tipText": "ابقَ رطبًا! شرب الماء يساعد في الحفاظ على مستويات الطاقة والتركيز طوال اليوم.",
   "@validationMessage": {
     "placeholders": {
       "field": {}
     }
-  }
+  },
+  "aboutUs": "من نحن",
+  "contactUs": "تواصل معنا"
 }

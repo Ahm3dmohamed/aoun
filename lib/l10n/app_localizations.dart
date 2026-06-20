@@ -104,7 +104,7 @@ abstract class AppLocalizations {
   /// No description provided for @welcomeBack.
   ///
   /// In en, this message translates to:
-  /// **'Welcome Back'**
+  /// **'Welcome back,'**
   String get welcomeBack;
 
   /// No description provided for @continueJourney.
@@ -185,215 +185,23 @@ abstract class AppLocalizations {
   /// **'Terms & Conditions'**
   String get termsConditions;
 
-  /// No description provided for @basicInformation.
-  ///
-  /// In en, this message translates to:
-  /// **'Basic Information:'**
-  String get basicInformation;
-
-  /// No description provided for @foundation.
-  ///
-  /// In en, this message translates to:
-  /// **'Foundation Account'**
-  String get foundation;
-
-  /// No description provided for @donor.
-  ///
-  /// In en, this message translates to:
-  /// **'Donor Account'**
-  String get donor;
-
-  /// No description provided for @enterFoundationName.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter foundation name'**
-  String get enterFoundationName;
-
-  /// No description provided for @typeOfFoundation.
-  ///
-  /// In en, this message translates to:
-  /// **'Type of Foundation'**
-  String get typeOfFoundation;
-
-  /// No description provided for @selectType.
-  ///
-  /// In en, this message translates to:
-  /// **'Select type'**
-  String get selectType;
-
-  /// No description provided for @fullName.
-  ///
-  /// In en, this message translates to:
-  /// **'Full Name'**
-  String get fullName;
-
-  /// No description provided for @enterFullName.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your full name'**
-  String get enterFullName;
-
-  /// No description provided for @resetYourPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Reset Your Password'**
-  String get resetYourPassword;
-
-  /// No description provided for @enterYourEmail.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter Your Email'**
-  String get enterYourEmail;
-
-  /// No description provided for @emailHint.
-  ///
-  /// In en, this message translates to:
-  /// **'you@example.com'**
-  String get emailHint;
-
-  /// No description provided for @pleaseEnterEmail.
-  ///
-  /// In en, this message translates to:
-  /// **'Please enter your email'**
-  String get pleaseEnterEmail;
-
-  /// No description provided for @enterValidEmail.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter a valid email'**
-  String get enterValidEmail;
-
-  /// No description provided for @resetLinkSent.
-  ///
-  /// In en, this message translates to:
-  /// **'Password reset link sent to your email address'**
-  String get resetLinkSent;
-
-  /// No description provided for @phone.
-  ///
-  /// In en, this message translates to:
-  /// **'Phone'**
-  String get phone;
-
-  /// No description provided for @enterPhone.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your phone number'**
-  String get enterPhone;
-
-  /// No description provided for @confirmPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Confirm Password'**
-  String get confirmPassword;
-
-  /// No description provided for @reenterPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Re-enter your password'**
-  String get reenterPassword;
-
-  /// No description provided for @preferences.
-  ///
-  /// In en, this message translates to:
-  /// **'Preferences:'**
-  String get preferences;
-
-  /// No description provided for @requiredDonation.
-  ///
-  /// In en, this message translates to:
-  /// **'Required Donation'**
-  String get requiredDonation;
-
-  /// No description provided for @selectRequiredDonation.
-  ///
-  /// In en, this message translates to:
-  /// **'Select required donation'**
-  String get selectRequiredDonation;
-
-  /// No description provided for @selectLocation.
-  ///
-  /// In en, this message translates to:
-  /// **'Select your location'**
-  String get selectLocation;
-
-  /// No description provided for @signUpTitle.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign Up'**
-  String get signUpTitle;
-
-  /// No description provided for @joinUs.
-  ///
-  /// In en, this message translates to:
-  /// **'Join Us'**
-  String get joinUs;
-
-  /// No description provided for @createAccountNow.
-  ///
-  /// In en, this message translates to:
-  /// **'Create your account now'**
-  String get createAccountNow;
-
-  /// No description provided for @createAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Create Account'**
-  String get createAccount;
-
-  /// No description provided for @alreadyHaveAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Already have an account?'**
-  String get alreadyHaveAccount;
-
-  /// No description provided for @signInNow.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign In'**
-  String get signInNow;
-
-  /// No description provided for @foundationAccountSuccess.
-  ///
-  /// In en, this message translates to:
-  /// **'Foundation account registered successfully!'**
-  String get foundationAccountSuccess;
-
-  /// No description provided for @donorAccountSuccess.
-  ///
-  /// In en, this message translates to:
-  /// **'Donor account registered successfully!'**
-  String get donorAccountSuccess;
-
-  /// No description provided for @requestAssistance.
-  ///
-  /// In en, this message translates to:
-  /// **'Request Assistance'**
-  String get requestAssistance;
-
   /// No description provided for @photoLibrary.
   ///
   /// In en, this message translates to:
   /// **'Photo Library'**
   String get photoLibrary;
 
-  /// No description provided for @remaining.
-  ///
-  /// In en, this message translates to:
-  /// **'Remaining'**
-  String get remaining;
-
-  /// No description provided for @donated.
-  ///
-  /// In en, this message translates to:
-  /// **'Donated'**
-  String get donated;
-
   /// No description provided for @camera.
   ///
   /// In en, this message translates to:
   /// **'Camera'**
   String get camera;
+
+  /// No description provided for @chatbot.
+  ///
+  /// In en, this message translates to:
+  /// **'ChatBot'**
+  String get chatbot;
 
   /// No description provided for @tapToUploadPhoto.
   ///
@@ -431,17 +239,83 @@ abstract class AppLocalizations {
   /// **'Logout'**
   String get logout;
 
-  /// No description provided for @homeIntroTitle.
+  /// No description provided for @passwordReset.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Password'**
+  String get passwordReset;
+
+  /// No description provided for @newPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'New Password'**
+  String get newPassword;
+
+  /// No description provided for @enterNewPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your new password'**
+  String get enterNewPassword;
+
+  /// No description provided for @confirmPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Password'**
+  String get confirmPassword;
+
+  /// No description provided for @reEnterPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Re-enter your new password'**
+  String get reEnterPassword;
+
+  /// No description provided for @pleaseEnterNewPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your new password'**
+  String get pleaseEnterNewPassword;
+
+  /// No description provided for @passwordLengthRequirement.
+  ///
+  /// In en, this message translates to:
+  /// **'Password must be at least 6 characters'**
+  String get passwordLengthRequirement;
+
+  /// No description provided for @pleaseConfirmPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Please confirm your password'**
+  String get pleaseConfirmPassword;
+
+  /// No description provided for @passwordNotMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Passwords do not match'**
+  String get passwordNotMatch;
+
+  /// No description provided for @save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// No description provided for @passwordResetSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Password has been reset successfully'**
+  String get passwordResetSuccess;
+
+  /// No description provided for @homeText1.
   ///
   /// In en, this message translates to:
   /// **'Help us support patients and those in need, bringing hope to their lives.'**
-  String get homeIntroTitle;
+  String get homeText1;
 
-  /// No description provided for @homeIntroSubtitle.
+  /// No description provided for @homeText2.
   ///
   /// In en, this message translates to:
   /// **'With your support, we can secure surgeries and essential treatments to save their lives and grant them a better future.'**
-  String get homeIntroSubtitle;
+  String get homeText2;
 
   /// No description provided for @donateNow.
   ///
@@ -449,23 +323,17 @@ abstract class AppLocalizations {
   /// **'Donate Now'**
   String get donateNow;
 
-  /// No description provided for @donateTapped.
-  ///
-  /// In en, this message translates to:
-  /// **'Donate button tapped'**
-  String get donateTapped;
-
   /// No description provided for @navHome.
   ///
   /// In en, this message translates to:
   /// **'Home'**
   String get navHome;
 
-  /// No description provided for @navDonationCampaigns.
+  /// No description provided for @navDonationRecommended.
   ///
   /// In en, this message translates to:
-  /// **'Donation Campaigns'**
-  String get navDonationCampaigns;
+  /// **'Donation Recommendations'**
+  String get navDonationRecommended;
 
   /// No description provided for @navRequestAssistance.
   ///
@@ -479,77 +347,41 @@ abstract class AppLocalizations {
   /// **'Profile'**
   String get navProfile;
 
-  /// No description provided for @onboardTitle1.
+  /// No description provided for @navMaps.
   ///
   /// In en, this message translates to:
-  /// **'Support Each Other'**
-  String get onboardTitle1;
+  /// **'Maps'**
+  String get navMaps;
 
-  /// No description provided for @onboardDesc1.
+  /// No description provided for @remaining.
   ///
   /// In en, this message translates to:
-  /// **'Join hands with Aoun to bring hope and care to people in need. Together, we make compassion a habit.'**
-  String get onboardDesc1;
+  /// **'Remaining'**
+  String get remaining;
 
-  /// No description provided for @onboardTitle2.
+  /// No description provided for @donated.
   ///
   /// In en, this message translates to:
-  /// **'Easy & Trusted Donations'**
-  String get onboardTitle2;
+  /// **'Donated'**
+  String get donated;
 
-  /// No description provided for @onboardDesc2.
+  /// No description provided for @donate.
   ///
   /// In en, this message translates to:
-  /// **'Contribute to verified causes effortlessly. Every donation you make directly reaches those who need it most.'**
-  String get onboardDesc2;
-
-  /// No description provided for @onboardTitle3.
-  ///
-  /// In en, this message translates to:
-  /// **'Make a Difference'**
-  String get onboardTitle3;
-
-  /// No description provided for @onboardDesc3.
-  ///
-  /// In en, this message translates to:
-  /// **'Your small act of kindness can create a lasting impact and change lives for the better.'**
-  String get onboardDesc3;
-
-  /// No description provided for @skip.
-  ///
-  /// In en, this message translates to:
-  /// **'Skip'**
-  String get skip;
-
-  /// No description provided for @reEnterPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Re-enter your new password'**
-  String get reEnterPassword;
-
-  /// No description provided for @pleaseConfirmPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Please confirm your password'**
-  String get pleaseConfirmPassword;
-
-  /// No description provided for @passwordsDoNotMatch.
-  ///
-  /// In en, this message translates to:
-  /// **'Passwords do not match'**
-  String get passwordsDoNotMatch;
-
-  /// No description provided for @save.
-  ///
-  /// In en, this message translates to:
-  /// **'Save'**
-  String get save;
+  /// **'Donate'**
+  String get donate;
 
   /// No description provided for @campaignMedicalSupplies.
   ///
   /// In en, this message translates to:
   /// **'Providing medical equipment and supplies'**
   String get campaignMedicalSupplies;
+
+  /// No description provided for @donationBlood.
+  ///
+  /// In en, this message translates to:
+  /// **'Blood'**
+  String get donationBlood;
 
   /// No description provided for @donationClothes.
   ///
@@ -641,17 +473,257 @@ abstract class AppLocalizations {
   /// **'Aswan'**
   String get locationAswan;
 
-  /// No description provided for @passwordResetSuccess.
+  /// No description provided for @homeIntroTitle.
   ///
   /// In en, this message translates to:
-  /// **'Password has been reset successfully'**
-  String get passwordResetSuccess;
+  /// **'Help us support patients and those in need, bringing hope.'**
+  String get homeIntroTitle;
+
+  /// No description provided for @homeIntroSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'With your support, we can secure surgeries and essential treatments.'**
+  String get homeIntroSubtitle;
+
+  /// No description provided for @donateTapped.
+  ///
+  /// In en, this message translates to:
+  /// **'Donate button tapped'**
+  String get donateTapped;
+
+  /// No description provided for @skip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get skip;
+
+  /// No description provided for @passwordsDoNotMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Passwords do not match'**
+  String get passwordsDoNotMatch;
+
+  /// No description provided for @onboardTitle1.
+  ///
+  /// In en, this message translates to:
+  /// **'Support Each Other'**
+  String get onboardTitle1;
+
+  /// No description provided for @onboardDesc1.
+  ///
+  /// In en, this message translates to:
+  /// **'Join hands with Aoun to bring hope and care to people in need. Together, we make compassion a habit.'**
+  String get onboardDesc1;
+
+  /// No description provided for @onboardTitle2.
+  ///
+  /// In en, this message translates to:
+  /// **'Easy & Trusted Donations'**
+  String get onboardTitle2;
+
+  /// No description provided for @onboardDesc2.
+  ///
+  /// In en, this message translates to:
+  /// **'Contribute to verified causes effortlessly. Every donation you make directly reaches those who need it most.'**
+  String get onboardDesc2;
+
+  /// No description provided for @onboardTitle3.
+  ///
+  /// In en, this message translates to:
+  /// **'Make a Difference'**
+  String get onboardTitle3;
+
+  /// No description provided for @onboardDesc3.
+  ///
+  /// In en, this message translates to:
+  /// **'Your small act of kindness can create a lasting impact and change lives for the better.'**
+  String get onboardDesc3;
+
+  /// No description provided for @basicInformation.
+  ///
+  /// In en, this message translates to:
+  /// **'Basic Information:'**
+  String get basicInformation;
 
   /// No description provided for @foundationName.
   ///
   /// In en, this message translates to:
   /// **'Foundation Name'**
   String get foundationName;
+
+  /// No description provided for @enterFoundationName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter foundation name'**
+  String get enterFoundationName;
+
+  /// No description provided for @typeOfFoundation.
+  ///
+  /// In en, this message translates to:
+  /// **'Type of Foundation'**
+  String get typeOfFoundation;
+
+  /// No description provided for @selectType.
+  ///
+  /// In en, this message translates to:
+  /// **'Select type'**
+  String get selectType;
+
+  /// No description provided for @fullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Full Name'**
+  String get fullName;
+
+  /// No description provided for @enterFullName.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your full name'**
+  String get enterFullName;
+
+  /// No description provided for @phone.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone'**
+  String get phone;
+
+  /// No description provided for @enterPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your phone number'**
+  String get enterPhone;
+
+  /// No description provided for @reenterPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Re-enter your password'**
+  String get reenterPassword;
+
+  /// No description provided for @foundation.
+  ///
+  /// In en, this message translates to:
+  /// **'Foundation Account'**
+  String get foundation;
+
+  /// No description provided for @donor.
+  ///
+  /// In en, this message translates to:
+  /// **'Donor Account'**
+  String get donor;
+
+  /// No description provided for @preferences.
+  ///
+  /// In en, this message translates to:
+  /// **'Preferences:'**
+  String get preferences;
+
+  /// No description provided for @requiredDonation.
+  ///
+  /// In en, this message translates to:
+  /// **'Required Donation'**
+  String get requiredDonation;
+
+  /// No description provided for @selectRequiredDonation.
+  ///
+  /// In en, this message translates to:
+  /// **'Select required donation'**
+  String get selectRequiredDonation;
+
+  /// No description provided for @selectLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Select your location'**
+  String get selectLocation;
+
+  /// No description provided for @signUpTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Up'**
+  String get signUpTitle;
+
+  /// No description provided for @joinUs.
+  ///
+  /// In en, this message translates to:
+  /// **'Join Us'**
+  String get joinUs;
+
+  /// No description provided for @createAccountNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Create your account now'**
+  String get createAccountNow;
+
+  /// No description provided for @createAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Account'**
+  String get createAccount;
+
+  /// No description provided for @alreadyHaveAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account?'**
+  String get alreadyHaveAccount;
+
+  /// No description provided for @signInNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign In'**
+  String get signInNow;
+
+  /// No description provided for @foundationAccountSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Foundation account registered successfully!'**
+  String get foundationAccountSuccess;
+
+  /// No description provided for @donorAccountSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Donor account registered successfully!'**
+  String get donorAccountSuccess;
+
+  /// No description provided for @resetYourPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Your Password'**
+  String get resetYourPassword;
+
+  /// No description provided for @enterYourEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter Your Email'**
+  String get enterYourEmail;
+
+  /// No description provided for @emailHint.
+  ///
+  /// In en, this message translates to:
+  /// **'you@example.com'**
+  String get emailHint;
+
+  /// No description provided for @pleaseEnterEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your email'**
+  String get pleaseEnterEmail;
+
+  /// No description provided for @enterValidEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid email'**
+  String get enterValidEmail;
+
+  /// No description provided for @resetLinkSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Password reset link sent to your email address'**
+  String get resetLinkSent;
+
+  /// No description provided for @requestAssistance.
+  ///
+  /// In en, this message translates to:
+  /// **'Request Assistance'**
+  String get requestAssistance;
 
   /// No description provided for @location.
   ///
@@ -700,6 +772,108 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Please enter {field}'**
   String validationMessage(Object field);
+
+  /// No description provided for @howCanWeHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'How can we help?'**
+  String get howCanWeHelp;
+
+  /// No description provided for @healthServices.
+  ///
+  /// In en, this message translates to:
+  /// **'Health Services'**
+  String get healthServices;
+
+  /// No description provided for @dailyHealthTip.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Health Tip'**
+  String get dailyHealthTip;
+
+  /// No description provided for @doctor.
+  ///
+  /// In en, this message translates to:
+  /// **'Doctor'**
+  String get doctor;
+
+  /// No description provided for @medicine.
+  ///
+  /// In en, this message translates to:
+  /// **'Medicine'**
+  String get medicine;
+
+  /// No description provided for @reports.
+  ///
+  /// In en, this message translates to:
+  /// **'Reports'**
+  String get reports;
+
+  /// No description provided for @chatTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Chat with Aoun'**
+  String get chatTitle;
+
+  /// No description provided for @history.
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get history;
+
+  /// No description provided for @addCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a caption'**
+  String get addCaption;
+
+  /// No description provided for @typeOrSpeak.
+  ///
+  /// In en, this message translates to:
+  /// **'Type or speak...'**
+  String get typeOrSpeak;
+
+  /// No description provided for @emergency.
+  ///
+  /// In en, this message translates to:
+  /// **'Emergency'**
+  String get emergency;
+
+  /// No description provided for @aiSymptomChecker.
+  ///
+  /// In en, this message translates to:
+  /// **'AI Symptom Checker'**
+  String get aiSymptomChecker;
+
+  /// No description provided for @describeFeel.
+  ///
+  /// In en, this message translates to:
+  /// **'Describe how you feel and let our AI provide guidance.'**
+  String get describeFeel;
+
+  /// No description provided for @startFreeConsultation.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Free Consultation'**
+  String get startFreeConsultation;
+
+  /// No description provided for @tipText.
+  ///
+  /// In en, this message translates to:
+  /// **'Stay hydrated! Drinking water helps maintain energy levels and focus throughout the day.'**
+  String get tipText;
+
+  /// No description provided for @aboutUs.
+  ///
+  /// In en, this message translates to:
+  /// **'About Us'**
+  String get aboutUs;
+
+  /// No description provided for @contactUs.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Us'**
+  String get contactUs;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

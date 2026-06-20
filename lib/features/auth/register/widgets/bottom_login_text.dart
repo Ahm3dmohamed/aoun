@@ -2,7 +2,7 @@ import 'package:aoun/core/utils/app_text_style.dart';
 import 'package:flutter/material.dart';
 
 class BottomLoginText extends StatelessWidget {
-  BottomLoginText({
+  const BottomLoginText({
     required this.onPressed,
     required this.txt,
     required this.txtBtn,

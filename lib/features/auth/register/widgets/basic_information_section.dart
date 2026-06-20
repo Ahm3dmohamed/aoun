@@ -3,7 +3,6 @@ import 'package:aoun/core/utils/app_text_style.dart';
 import 'package:aoun/core/widgets/custom_textfield.dart';
 import 'package:aoun/features/auth/register/widgets/custom_dropdownfield.dart';
 import 'package:aoun/features/widgets/app_constants.dart';
-import 'package:aoun/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -64,7 +63,7 @@ class _BasicInformationSectionState extends State<BasicInformationSection> {
           CustomDropdownField(
             label: context.l10n.typeOfFoundation,
             value: widget.selectedFoundationType,
-            items: AppConstants.foundationTypes(context),
+            itemsMap: AppConstants.foundationTypesMap(context),
             hint: context.l10n.selectType,
             onChanged: widget.onFoundationTypeChanged,
           ),

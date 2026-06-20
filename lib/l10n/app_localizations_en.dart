@@ -12,7 +12,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get signIn => 'Sign In';
 
   @override
-  String get welcomeBack => 'Welcome Back';
+  String get welcomeBack => 'Welcome back,';
 
   @override
   String get continueJourney => 'Continue your journey with Aoun.';
@@ -54,109 +54,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get termsConditions => 'Terms & Conditions';
 
   @override
-  String get basicInformation => 'Basic Information:';
-
-  @override
-  String get foundation => 'Foundation Account';
-
-  @override
-  String get donor => 'Donor Account';
-
-  @override
-  String get enterFoundationName => 'Enter foundation name';
-
-  @override
-  String get typeOfFoundation => 'Type of Foundation';
-
-  @override
-  String get selectType => 'Select type';
-
-  @override
-  String get fullName => 'Full Name';
-
-  @override
-  String get enterFullName => 'Enter your full name';
-
-  @override
-  String get resetYourPassword => 'Reset Your Password';
-
-  @override
-  String get enterYourEmail => 'Enter Your Email';
-
-  @override
-  String get emailHint => 'you@example.com';
-
-  @override
-  String get pleaseEnterEmail => 'Please enter your email';
-
-  @override
-  String get enterValidEmail => 'Enter a valid email';
-
-  @override
-  String get resetLinkSent => 'Password reset link sent to your email address';
-
-  @override
-  String get phone => 'Phone';
-
-  @override
-  String get enterPhone => 'Enter your phone number';
-
-  @override
-  String get confirmPassword => 'Confirm Password';
-
-  @override
-  String get reenterPassword => 'Re-enter your password';
-
-  @override
-  String get preferences => 'Preferences:';
-
-  @override
-  String get requiredDonation => 'Required Donation';
-
-  @override
-  String get selectRequiredDonation => 'Select required donation';
-
-  @override
-  String get selectLocation => 'Select your location';
-
-  @override
-  String get signUpTitle => 'Sign Up';
-
-  @override
-  String get joinUs => 'Join Us';
-
-  @override
-  String get createAccountNow => 'Create your account now';
-
-  @override
-  String get createAccount => 'Create Account';
-
-  @override
-  String get alreadyHaveAccount => 'Already have an account?';
-
-  @override
-  String get signInNow => 'Sign In';
-
-  @override
-  String get foundationAccountSuccess => 'Foundation account registered successfully!';
-
-  @override
-  String get donorAccountSuccess => 'Donor account registered successfully!';
-
-  @override
-  String get requestAssistance => 'Request Assistance';
-
-  @override
   String get photoLibrary => 'Photo Library';
 
   @override
-  String get remaining => 'Remaining';
-
-  @override
-  String get donated => 'Donated';
-
-  @override
   String get camera => 'Camera';
+
+  @override
+  String get chatbot => 'ChatBot';
 
   @override
   String get tapToUploadPhoto => 'Tap above to upload your photo';
@@ -177,22 +81,52 @@ class AppLocalizationsEn extends AppLocalizations {
   String get logout => 'Logout';
 
   @override
-  String get homeIntroTitle => 'Help us support patients and those in need, bringing hope to their lives.';
+  String get passwordReset => 'Reset Password';
 
   @override
-  String get homeIntroSubtitle => 'With your support, we can secure surgeries and essential treatments to save their lives and grant them a better future.';
+  String get newPassword => 'New Password';
+
+  @override
+  String get enterNewPassword => 'Enter your new password';
+
+  @override
+  String get confirmPassword => 'Confirm Password';
+
+  @override
+  String get reEnterPassword => 'Re-enter your new password';
+
+  @override
+  String get pleaseEnterNewPassword => 'Please enter your new password';
+
+  @override
+  String get passwordLengthRequirement => 'Password must be at least 6 characters';
+
+  @override
+  String get pleaseConfirmPassword => 'Please confirm your password';
+
+  @override
+  String get passwordNotMatch => 'Passwords do not match';
+
+  @override
+  String get save => 'Save';
+
+  @override
+  String get passwordResetSuccess => 'Password has been reset successfully';
+
+  @override
+  String get homeText1 => 'Help us support patients and those in need, bringing hope to their lives.';
+
+  @override
+  String get homeText2 => 'With your support, we can secure surgeries and essential treatments to save their lives and grant them a better future.';
 
   @override
   String get donateNow => 'Donate Now';
 
   @override
-  String get donateTapped => 'Donate button tapped';
-
-  @override
   String get navHome => 'Home';
 
   @override
-  String get navDonationCampaigns => 'Donation Campaigns';
+  String get navDonationRecommended => 'Donation Recommendations';
 
   @override
   String get navRequestAssistance => 'Request Assistance';
@@ -201,40 +135,22 @@ class AppLocalizationsEn extends AppLocalizations {
   String get navProfile => 'Profile';
 
   @override
-  String get onboardTitle1 => 'Support Each Other';
+  String get navMaps => 'Maps';
 
   @override
-  String get onboardDesc1 => 'Join hands with Aoun to bring hope and care to people in need. Together, we make compassion a habit.';
+  String get remaining => 'Remaining';
 
   @override
-  String get onboardTitle2 => 'Easy & Trusted Donations';
+  String get donated => 'Donated';
 
   @override
-  String get onboardDesc2 => 'Contribute to verified causes effortlessly. Every donation you make directly reaches those who need it most.';
-
-  @override
-  String get onboardTitle3 => 'Make a Difference';
-
-  @override
-  String get onboardDesc3 => 'Your small act of kindness can create a lasting impact and change lives for the better.';
-
-  @override
-  String get skip => 'Skip';
-
-  @override
-  String get reEnterPassword => 'Re-enter your new password';
-
-  @override
-  String get pleaseConfirmPassword => 'Please confirm your password';
-
-  @override
-  String get passwordsDoNotMatch => 'Passwords do not match';
-
-  @override
-  String get save => 'Save';
+  String get donate => 'Donate';
 
   @override
   String get campaignMedicalSupplies => 'Providing medical equipment and supplies';
+
+  @override
+  String get donationBlood => 'Blood';
 
   @override
   String get donationClothes => 'Clothes';
@@ -282,10 +198,130 @@ class AppLocalizationsEn extends AppLocalizations {
   String get locationAswan => 'Aswan';
 
   @override
-  String get passwordResetSuccess => 'Password has been reset successfully';
+  String get homeIntroTitle => 'Help us support patients and those in need, bringing hope.';
+
+  @override
+  String get homeIntroSubtitle => 'With your support, we can secure surgeries and essential treatments.';
+
+  @override
+  String get donateTapped => 'Donate button tapped';
+
+  @override
+  String get skip => 'Skip';
+
+  @override
+  String get passwordsDoNotMatch => 'Passwords do not match';
+
+  @override
+  String get onboardTitle1 => 'Support Each Other';
+
+  @override
+  String get onboardDesc1 => 'Join hands with Aoun to bring hope and care to people in need. Together, we make compassion a habit.';
+
+  @override
+  String get onboardTitle2 => 'Easy & Trusted Donations';
+
+  @override
+  String get onboardDesc2 => 'Contribute to verified causes effortlessly. Every donation you make directly reaches those who need it most.';
+
+  @override
+  String get onboardTitle3 => 'Make a Difference';
+
+  @override
+  String get onboardDesc3 => 'Your small act of kindness can create a lasting impact and change lives for the better.';
+
+  @override
+  String get basicInformation => 'Basic Information:';
 
   @override
   String get foundationName => 'Foundation Name';
+
+  @override
+  String get enterFoundationName => 'Enter foundation name';
+
+  @override
+  String get typeOfFoundation => 'Type of Foundation';
+
+  @override
+  String get selectType => 'Select type';
+
+  @override
+  String get fullName => 'Full Name';
+
+  @override
+  String get enterFullName => 'Enter your full name';
+
+  @override
+  String get phone => 'Phone';
+
+  @override
+  String get enterPhone => 'Enter your phone number';
+
+  @override
+  String get reenterPassword => 'Re-enter your password';
+
+  @override
+  String get foundation => 'Foundation Account';
+
+  @override
+  String get donor => 'Donor Account';
+
+  @override
+  String get preferences => 'Preferences:';
+
+  @override
+  String get requiredDonation => 'Required Donation';
+
+  @override
+  String get selectRequiredDonation => 'Select required donation';
+
+  @override
+  String get selectLocation => 'Select your location';
+
+  @override
+  String get signUpTitle => 'Sign Up';
+
+  @override
+  String get joinUs => 'Join Us';
+
+  @override
+  String get createAccountNow => 'Create your account now';
+
+  @override
+  String get createAccount => 'Create Account';
+
+  @override
+  String get alreadyHaveAccount => 'Already have an account?';
+
+  @override
+  String get signInNow => 'Sign In';
+
+  @override
+  String get foundationAccountSuccess => 'Foundation account registered successfully!';
+
+  @override
+  String get donorAccountSuccess => 'Donor account registered successfully!';
+
+  @override
+  String get resetYourPassword => 'Reset Your Password';
+
+  @override
+  String get enterYourEmail => 'Enter Your Email';
+
+  @override
+  String get emailHint => 'you@example.com';
+
+  @override
+  String get pleaseEnterEmail => 'Please enter your email';
+
+  @override
+  String get enterValidEmail => 'Enter a valid email';
+
+  @override
+  String get resetLinkSent => 'Password reset link sent to your email address';
+
+  @override
+  String get requestAssistance => 'Request Assistance';
 
   @override
   String get location => 'Location';
@@ -312,4 +348,55 @@ class AppLocalizationsEn extends AppLocalizations {
   String validationMessage(Object field) {
     return 'Please enter $field';
   }
+
+  @override
+  String get howCanWeHelp => 'How can we help?';
+
+  @override
+  String get healthServices => 'Health Services';
+
+  @override
+  String get dailyHealthTip => 'Daily Health Tip';
+
+  @override
+  String get doctor => 'Doctor';
+
+  @override
+  String get medicine => 'Medicine';
+
+  @override
+  String get reports => 'Reports';
+
+  @override
+  String get chatTitle => 'Chat with Aoun';
+
+  @override
+  String get history => 'History';
+
+  @override
+  String get addCaption => 'Add a caption';
+
+  @override
+  String get typeOrSpeak => 'Type or speak...';
+
+  @override
+  String get emergency => 'Emergency';
+
+  @override
+  String get aiSymptomChecker => 'AI Symptom Checker';
+
+  @override
+  String get describeFeel => 'Describe how you feel and let our AI provide guidance.';
+
+  @override
+  String get startFreeConsultation => 'Start Free Consultation';
+
+  @override
+  String get tipText => 'Stay hydrated! Drinking water helps maintain energy levels and focus throughout the day.';
+
+  @override
+  String get aboutUs => 'About Us';
+
+  @override
+  String get contactUs => 'Contact Us';
 }

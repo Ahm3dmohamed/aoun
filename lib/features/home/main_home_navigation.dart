@@ -1,7 +1,6 @@
 import 'package:aoun/core/extensions/localization_extension.dart';
 import 'package:aoun/core/themes/app_colors.dart';
 import 'package:aoun/features/widgets/app_constants.dart';
-import 'package:aoun/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 
 class MainHomeNavigation extends StatefulWidget {
@@ -44,12 +43,17 @@ class _MainHomeNavigationState extends State<MainHomeNavigation> {
             ),
             BottomNavigationBarItem(
               icon: const Icon(Icons.volunteer_activism_rounded),
-              label: loc.navDonationCampaigns,
+              label: loc.navDonationRecommended,
+            ),
+            BottomNavigationBarItem(
+              icon: const Icon(Icons.location_on_outlined),
+              label: "Location",
             ),
             BottomNavigationBarItem(
               icon: const Icon(Icons.health_and_safety_sharp),
               label: loc.navRequestAssistance,
             ),
+
             BottomNavigationBarItem(
               icon: const Icon(Icons.person_2_rounded),
               label: loc.navProfile,
