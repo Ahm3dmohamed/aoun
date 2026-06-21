@@ -1,7 +1,5 @@
 import 'package:aoun/core/routing/app_routes.dart';
 import 'package:aoun/core/utils/app_text_style.dart';
-import 'package:aoun/features/cases/domain/entities/case_entity.dart';
-import 'package:aoun/features/home/presentation/widgets/case_card.dart';
 import 'package:aoun/features/foundations/domain/entities/donation_entity.dart';
 import 'package:aoun/features/foundations/domain/entities/foundation_entity.dart';
 import 'package:flutter/material.dart';
@@ -10,14 +8,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class FoundationDashboardSection extends StatelessWidget {
   final FoundationEntity foundation;
   final List<DonationEntity> receivedDonations;
-  final List<CaseEntity> cases;
   final ScrollController? parentScrollController;
 
   const FoundationDashboardSection({
     super.key,
     required this.foundation,
     required this.receivedDonations,
-    required this.cases,
     this.parentScrollController,
   });
 
@@ -305,124 +301,37 @@ class FoundationDashboardSection extends StatelessWidget {
           ),
         ),
 
-        SizedBox(height: 12.h),
-        Row(
-          children: [
-            Expanded(
-              child: _buildActionButton(
-                context,
-                icon: Icons.add_circle_outline_rounded,
-                label: isAr ? 'إنشاء حالة' : 'Create Case',
-                onTap: () => Navigator.pushNamed(context, AppRoutes.request),
-              ),
-            ),
+        // SizedBox(height: 12.h),
+        // Row(
+        //   children: [
+        //     Expanded(
+        //       child: _buildActionButton(
+        //         context,
+        //         icon: Icons.add_circle_outline_rounded,
+        //         label: isAr ? 'إنشاء حالة' : 'Create Case',
+        //         onTap: () => Navigator.pushNamed(context, AppRoutes.request),
+        //       ),
+        //     ),
 
-            SizedBox(width: 10.w),
-            Expanded(
-              child: _buildActionButton(
-                context,
-                icon: Icons.history_rounded,
-                label: isAr ? 'عرض السجل' : 'View Donations',
-                onTap: () {
-                  if (parentScrollController != null && parentScrollController!.hasClients) {
-                    parentScrollController!.animateTo(
-                      parentScrollController!.position.maxScrollExtent,
-                      duration: const Duration(milliseconds: 600),
-                      curve: Curves.easeInOut,
-                    );
-                  }
-                },
-              ),
-            ),
-          ],
-        ),
-        SizedBox(height: 28.h),
-
-        // Active Cases Section
-        Builder(
-          builder: (context) {
-            final foundationCases = cases.where((c) {
-              if (c.foundationName == null) return false;
-              return c.foundationName!.trim().toLowerCase() == foundation.name.trim().toLowerCase();
-            }).toList();
-
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  isAr ? 'حالاتنا النشطة' : 'Our Active Cases',
-                  style: AppTextStyle.heading(
-                    context,
-                    fontSize: 16.sp,
-                    color: Colors.white,
-                  ),
-                ),
-                SizedBox(height: 12.h),
-                if (foundationCases.isEmpty)
-                  Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.symmetric(vertical: 30.h, horizontal: 16.w),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.04),
-                      borderRadius: BorderRadius.circular(16.r),
-                      border: Border.all(color: Colors.white.withOpacity(0.08)),
-                    ),
-                    child: Column(
-                      children: [
-                        Icon(
-                          Icons.volunteer_activism_outlined,
-                          color: Colors.white38,
-                          size: 36.r,
-                        ),
-                        SizedBox(height: 10.h),
-                        Text(
-                          isAr
-                              ? 'لا توجد حالات مضافة من مؤسستك بعد.'
-                              : 'No cases added by your foundation yet.',
-                          style: AppTextStyle.body(
-                            context,
-                            color: Colors.white54,
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
-                        SizedBox(height: 14.h),
-                        ElevatedButton.icon(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.teal.shade400,
-                            foregroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.r),
-                            ),
-                            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-                          ),
-                          onPressed: () => Navigator.pushNamed(context, AppRoutes.request),
-                          icon: const Icon(Icons.add_rounded, size: 18),
-                          label: Text(isAr ? 'إنشاء حالة أولى' : 'Create First Case'),
-                        ),
-                      ],
-                    ),
-                  )
-                else
-                  SizedBox(
-                    height: 380.h,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: foundationCases.length,
-                      itemBuilder: (context, index) {
-                        return SizedBox(
-                          width: 300.w,
-                          child: Padding(
-                            padding: EdgeInsets.only(right: 16.w),
-                            child: CaseCard(caseItem: foundationCases[index]),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-              ],
-            );
-          }
-        ),
+        //     SizedBox(width: 10.w),
+        //     Expanded(
+        //       child: _buildActionButton(
+        //         context,
+        //         icon: Icons.history_rounded,
+        //         label: isAr ? 'عرض السجل' : 'View Donations',
+        //         onTap: () {
+        //           if (parentScrollController != null && parentScrollController!.hasClients) {
+        //             parentScrollController!.animateTo(
+        //               parentScrollController!.position.maxScrollExtent,
+        //               duration: const Duration(milliseconds: 600),
+        //               curve: Curves.easeInOut,
+        //             );
+        //           }
+        //         },
+        //       ),
+        //     ),
+        //   ],
+        // ),
         SizedBox(height: 28.h),
 
         // Recent Donations Ledger

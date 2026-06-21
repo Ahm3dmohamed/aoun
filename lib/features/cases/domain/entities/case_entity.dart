@@ -11,7 +11,6 @@ class CaseEntity {
   final String urgency;
   final String location;
   final DateTime createdAt;
-  final String? foundationName;
 
   const CaseEntity({
     required this.id,
@@ -26,7 +25,6 @@ class CaseEntity {
     required this.urgency,
     required this.location,
     required this.createdAt,
-    this.foundationName,
   });
 
   double get progressPercent =>

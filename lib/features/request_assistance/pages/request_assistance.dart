@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:aoun/core/di/injection_container.dart';
-import 'package:aoun/core/storage/auth_local_data_source.dart';
 import 'package:aoun/core/extensions/localization_extension.dart';
 import 'package:aoun/core/utils/app_text_style.dart';
 import 'package:aoun/features/request_assistance/domain/entities/request_assistance_entity.dart';
@@ -12,6 +11,7 @@ import 'package:aoun/features/splash/splash_background.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_picker/image_picker.dart';
 
 class RequestAssistancePage extends StatelessWidget {
   const RequestAssistancePage({super.key});
@@ -44,24 +44,6 @@ class _RequestAssistanceViewState extends State<_RequestAssistanceView> {
   final List<File> _selectedFiles = [];
   String _selectedCategory = 'medical';
   String _selectedUrgency = 'Medium';
-
-  @override
-  void initState() {
-    super.initState();
-    _loadFoundationName();
-  }
-
-  Future<void> _loadFoundationName() async {
-    final userData = await sl<AuthLocalDataSource>().getUserData();
-    if (userData != null && userData['role'] == 'foundation_admin') {
-      final name = userData['name']?.toString() ?? '';
-      if (name.isNotEmpty) {
-        setState(() {
-          _foundationController.text = name;
-        });
-      }
-    }
-  }
 
   // Valid API urgency values (keys = what gets sent to API)
   static const Map<String, String> _urgencyLevels = {

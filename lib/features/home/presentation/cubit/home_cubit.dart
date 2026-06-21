@@ -1,5 +1,5 @@
-import 'package:aoun/features/cases/domain/entities/case_entity.dart';
-import 'package:aoun/features/cases/domain/usecases/get_cases_use_case.dart' as cases;
+import 'package:aoun/features/cases/domain/usecases/get_cases_use_case.dart'
+    as cases;
 import 'package:aoun/features/foundations/data/models/foundation_model.dart';
 import 'package:aoun/features/foundations/domain/repositories/foundation_repository.dart';
 import 'package:aoun/features/foundations/domain/usecases/get_foundations_use_case.dart';
@@ -62,18 +62,38 @@ class HomeCubit extends Cubit<HomeState> {
     final userData = await roleResolver.authLocalDataSource.getUserData();
     if (userData != null) {
       final foundation = FoundationModel(
-        id: userData['foundation_id']?.toString() ?? userData['id']?.toString() ?? const Uuid().v4(),
+        id:
+            userData['foundation_id']?.toString() ??
+            userData['id']?.toString() ??
+            const Uuid().v4(),
         name: userData['name']?.toString() ?? '',
         email: userData['email']?.toString() ?? '',
         phone: userData['phone']?.toString() ?? '',
-        foundationType: userData['type']?.toString() ?? userData['foundationType']?.toString() ?? '',
-        donationType: userData['preferred_donation']?.toString() ?? userData['donationType']?.toString() ?? '',
+        foundationType:
+            userData['type']?.toString() ??
+            userData['foundationType']?.toString() ??
+            '',
+        donationType:
+            userData['preferred_donation']?.toString() ??
+            userData['donationType']?.toString() ??
+            '',
         location: userData['location']?.toString() ?? '',
-        createdAt: userData['created_at']?.toString() ?? DateTime.now().toIso8601String().split('T')[0],
-        totalDonations: (userData['total_donations'] ?? userData['totalDonations'] as num?)?.toDouble() ?? 0.0,
-        targetAmount: (userData['target_amount'] ?? userData['targetAmount'] as num?)?.toDouble() ?? 800000.0,
-        description: userData['description']?.toString() ?? 'Registered via Aoun application.',
-        isVerified: userData['is_verified'] == true || userData['isVerified'] == true,
+        createdAt:
+            userData['created_at']?.toString() ??
+            DateTime.now().toIso8601String().split('T')[0],
+        totalDonations:
+            (userData['total_donations'] ?? userData['totalDonations'] as num?)
+                ?.toDouble() ??
+            0.0,
+        targetAmount:
+            (userData['target_amount'] ?? userData['targetAmount'] as num?)
+                ?.toDouble() ??
+            800000.0,
+        description:
+            userData['description']?.toString() ??
+            'Registered via Aoun application.',
+        isVerified:
+            userData['is_verified'] == true || userData['isVerified'] == true,
       );
       await saveFoundationUseCase(foundation);
     }
@@ -85,9 +105,11 @@ class HomeCubit extends Cubit<HomeState> {
         emit(HomeError(failure.message));
       },
       (foundations) async {
-        final matchingFoundations = foundations.where(
-          (f) => f.email.toLowerCase().trim() == email.toLowerCase().trim()
-        ).toList();
+        final matchingFoundations = foundations
+            .where(
+              (f) => f.email.toLowerCase().trim() == email.toLowerCase().trim(),
+            )
+            .toList();
 
         if (matchingFoundations.isEmpty) {
           emit(const HomeError('Foundation data not found in local storage.'));
@@ -96,33 +118,29 @@ class HomeCubit extends Cubit<HomeState> {
 
         final adminFound = matchingFoundations.first;
 
-        // 3. Fetch cases
-        final casesResult = await getCasesUseCase();
-        final List<CaseEntity> loadedCases = casesResult.fold(
-          (failure) => <CaseEntity>[],
-          (casesList) => casesList,
-        );
-
-        // 4. Fetch donations for this foundation
+        // 3. Fetch donations for this foundation
         final donationsResult = await foundationRepository.getDonations();
         donationsResult.fold(
           (failure) {
-            emit(FoundationHomeLoaded(
-              foundation: adminFound,
-              receivedDonations: const [],
-              cases: loadedCases,
-            ));
+            emit(
+              FoundationHomeLoaded(
+                foundation: adminFound,
+                receivedDonations: const [],
+              ),
+            );
           },
           (allDonations) {
-            final received = allDonations
-                .where((d) => d.foundationId == adminFound.id)
-                .toList()
-              ..sort((a, b) => b.createdAt.compareTo(a.createdAt));
-            emit(FoundationHomeLoaded(
-              foundation: adminFound,
-              receivedDonations: received,
-              cases: loadedCases,
-            ));
+            final received =
+                allDonations
+                    .where((d) => d.foundationId == adminFound.id)
+                    .toList()
+                  ..sort((a, b) => b.createdAt.compareTo(a.createdAt));
+            emit(
+              FoundationHomeLoaded(
+                foundation: adminFound,
+                receivedDonations: received,
+              ),
+            );
           },
         );
       },

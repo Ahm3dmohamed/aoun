@@ -28,7 +28,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initInjection();
   await Hive.initFlutter();
-  
+
   // Register manual adapters
   Hive.registerAdapter(FoundationModelAdapter());
   Hive.registerAdapter(DonationModelAdapter());

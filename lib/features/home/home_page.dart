@@ -3,15 +3,19 @@ import 'package:aoun/core/extensions/localization_extension.dart';
 import 'package:aoun/core/storage/auth_local_data_source.dart';
 import 'package:aoun/core/themes/app_colors.dart';
 import 'package:aoun/core/utils/app_text_style.dart';
+import 'package:aoun/features/foundations/presentation/pages/donation_page.dart';
 import 'package:aoun/features/home/presentation/cubit/home_cubit.dart';
 import 'package:aoun/features/home/presentation/cubit/home_state.dart';
+import 'package:aoun/features/home/presentation/widgets/case_card.dart';
 import 'package:aoun/features/home/presentation/widgets/donor_cases_section.dart';
 import 'package:aoun/features/home/presentation/widgets/foundation_dashboard_section.dart';
 import 'package:aoun/features/splash/splash_background.dart';
 import 'package:aoun/features/foundations/presentation/cubit/foundation_cubit.dart';
 import 'package:aoun/features/foundations/presentation/cubit/foundation_state.dart';
 import 'package:aoun/features/foundations/presentation/widgets/donor_home_section.dart';
+import 'package:aoun/features/foundations/presentation/widgets/foundation_home_section.dart';
 import 'package:aoun/features/recommendations/presentation/cubit/recommendations_cubit.dart';
+import 'package:aoun/features/recommendations/presentation/widgets/recommended_donations_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -257,7 +261,6 @@ class _HomePageState extends State<HomePage> {
                     return FoundationDashboardSection(
                       foundation: state.foundation,
                       receivedDonations: state.receivedDonations,
-                      cases: state.cases,
                       parentScrollController: _scrollController,
                     );
                   } else if (state is DonorHomeLoaded) {

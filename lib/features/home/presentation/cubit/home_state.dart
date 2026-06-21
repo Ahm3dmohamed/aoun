@@ -17,12 +17,10 @@ class HomeLoading extends HomeState {
 class FoundationHomeLoaded extends HomeState {
   final FoundationEntity foundation;
   final List<DonationEntity> receivedDonations;
-  final List<CaseEntity> cases;
 
   const FoundationHomeLoaded({
     required this.foundation,
     required this.receivedDonations,
-    required this.cases,
   });
 }
 
