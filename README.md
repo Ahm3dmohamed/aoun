@@ -292,21 +292,19 @@ flowchart LR
 
 <div align="center">
 
-| Splash / Onboarding | Home Feed | AI Recommendations |
+| 1. Registration & Preferences | 2. Request Assistance | 3. Profile & Settings |
 |:---:|:---:|:---:|
-| ![Splash](https://via.placeholder.com/200x400/1a73e8/ffffff?text=Splash) | ![Home](https://via.placeholder.com/200x400/34a853/ffffff?text=Home) | ![AI](https://via.placeholder.com/200x400/FF6B35/ffffff?text=AI+Recs) |
+| <img src="screenshots/register.png" width="220" alt="Register & Preferences"/> | <img src="screenshots/request_assistance.png" width="220" alt="Request Assistance"/> | <img src="screenshots/profile.png" width="220" alt="Profile & Settings"/> |
 
-| AI Chat | Nearby Map | Profile |
-|:---:|:---:|:---:|
-| ![Chat](https://via.placeholder.com/200x400/8B0000/ffffff?text=AI+Chat) | ![Map](https://via.placeholder.com/200x400/0175C2/ffffff?text=Map) | ![Profile](https://via.placeholder.com/200x400/fbbc04/000000?text=Profile) |
+<br/>
 
-| Login | Register | Campaign Detail |
-|:---:|:---:|:---:|
-| ![Login](https://via.placeholder.com/200x400/ea4335/ffffff?text=Login) | ![Register](https://via.placeholder.com/200x400/34a853/ffffff?text=Register) | ![Detail](https://via.placeholder.com/200x400/1a73e8/ffffff?text=Campaign) |
+| 4. Home & AI Health Assistant | 5. AI Recommended Donations |
+|:---:|:---:|
+| <img src="screenshots/home_health.png" width="220" alt="Home & Health AI"/> | <img src="screenshots/ai_recommendations.png" width="220" alt="AI Recommendations"/> |
 
 </div>
 
-> 📌 Replace placeholder images with actual screenshots from the app.
+> 💡 *Save your screenshot files inside the `screenshots/` directory using the names above (`register.png`, `request_assistance.png`, `profile.png`, `home_health.png`, `ai_recommendations.png`).*
 
 ---
 
