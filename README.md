@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- HERO BANNER -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Aoun%20-%20عون&fontSize=70&fontColor=fff&animation=twinkling&fontAlignY=35&desc=AI-Powered%20Donation%20%26%20Healthcare%20Platform&descAlignY=65&descSize=20" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=Aoun%20-%20عون&fontSize=70&fontColor=fff&animation=twinkling&fontAlignY=35&desc=AI-Powered%20Donation%20and%20Healthcare%20Platform&descAlignY=65&descSize=20" width="100%"/>
 
 <br/>
 
@@ -24,7 +24,7 @@
 
 > **Aoun (عون)** is an AI-powered donation & healthcare assistance platform built with Flutter and Clean Architecture. It uses Groq's Llama models to recommend verified cases, analyze symptoms via AI, locate nearby medical centers, and streamline humanitarian giving.
 
-[📱 Screenshots](#-screenshots) · [⚡ Quick Start](#-quick-start) · [🏗️ Architecture](#️-architecture) · [🤖 AI & Maps](#-ai--maps-engine) · [📬 Author](#-author)
+[📱 Screenshots](#-screenshots) · [⚡ Quick Start](#-quick-start) · [🏗️ Architecture](#-system-architecture) · [🤖 AI & Maps](#-ai--maps-engine) · [📬 Author](#-author)
 
 </div>
 
@@ -65,13 +65,13 @@
 
 | 1. Registration & Preferences | 2. Request Assistance | 3. Profile & Settings |
 |:---:|:---:|:---:|
-| <img src="screenshots/register.png" width="230" alt="Register & Preferences"/> | <img src="screenshots/request_assistance.png" width="230" alt="Request Assistance"/> | <img src="screenshots/profile.png" width="230" alt="Profile & Settings"/> |
+| <img src="assets/img/register.png" width="230" alt="Register & Preferences"/> | <img src="assets/img/request.png" width="230" alt="Request Assistance"/> | <img src="assets/img/profile.png" width="230" alt="Profile & Settings"/> |
 
 <br/>
 
 | 4. Home & AI Health Assistant | 5. AI Recommended Donations |
 |:---:|:---:|
-| <img src="screenshots/home_health.png" width="230" alt="Home & Health AI"/> | <img src="screenshots/ai_recommendations.png" width="230" alt="AI Recommendations"/> |
+| <img src="assets/img/home.png" width="230" alt="Home & Health AI"/> | <img src="assets/img/ai_recommendation.png" width="230" alt="AI Recommendations"/> |
 
 </div>
 
@@ -107,12 +107,17 @@ graph TD
         Secure[Secure Storage]
     end
 
-    Page --> State --> UC --> RepoDef
-    RepoImpl ..|> RepoDef
+    Page --> State
+    State --> UC
+    UC --> RepoDef
+    RepoImpl -.-> RepoDef
     UC --> Entity
     RepoImpl --> DS
     DS --> Model
-    DS --> Laravel & Groq & Maps & Secure
+    DS --> Laravel
+    DS --> Groq
+    DS --> Maps
+    DS --> Secure
 
     style UI fill:#02569B,color:#fff
     style Core fill:#008059,color:#fff
