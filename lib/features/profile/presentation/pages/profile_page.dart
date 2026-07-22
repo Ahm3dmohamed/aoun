@@ -4,7 +4,6 @@ import 'package:aoun/core/extensions/localization_extension.dart';
 import 'package:aoun/core/routing/app_routes.dart';
 import 'package:aoun/features/auth/log_in/presentation/cubit/logout_cubit.dart';
 import 'package:aoun/features/auth/log_in/presentation/cubit/logout_state.dart';
-import 'package:aoun/features/chat/presentation/pages/chatbot_page.dart';
 import 'package:aoun/features/profile/presentation/widgets/account_info_page.dart';
 import 'package:aoun/features/profile/presentation/widgets/build_section_title.dart';
 import 'package:aoun/features/profile/presentation/widgets/language_toggle.dart';
@@ -155,9 +154,9 @@ class _ProfilePageState extends State<ProfilePage> {
                         icon: Icons.chat_bubble_outline,
                         title: "ChatBot",
                         onTap: () {
-                          Navigator.push(
+                          Navigator.pushNamed(
                             profilePageContext,
-                            MaterialPageRoute(builder: (_) => ChatbotPage()),
+                            AppRoutes.chatbot,
                           );
                         },
                       ),

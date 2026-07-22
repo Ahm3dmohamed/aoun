@@ -399,4 +399,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get contactUs => 'Contact Us';
+
+  @override
+  String get clearHistory => 'Clear History';
+
+  @override
+  String get clearHistoryConfirm => 'Are you sure you want to clear all chat history? This action cannot be undone.';
+
+  @override
+  String get clear => 'Clear';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get clearHistorySuccess => 'Chat history cleared successfully';
+
+  @override
+  String get clearHistoryFailure => 'Failed to clear chat history';
+
+  @override
+  String get enterTokenFromEmail => 'Enter the reset token sent to your email address';
+
+  @override
+  String get resetToken => 'Reset Token';
+
+  @override
+  String get pleaseEnterToken => 'Please enter the reset token from your email';
 }

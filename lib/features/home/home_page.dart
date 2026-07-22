@@ -1,5 +1,6 @@
 import 'package:aoun/core/di/injection_container.dart';
 import 'package:aoun/core/extensions/localization_extension.dart';
+import 'package:aoun/core/routing/app_routes.dart';
 import 'package:aoun/core/storage/auth_local_data_source.dart';
 import 'package:aoun/core/themes/app_colors.dart';
 import 'package:aoun/core/utils/app_text_style.dart';
@@ -132,14 +133,51 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  CircleAvatar(
-                    radius: 22.r,
-                    backgroundColor: Colors.white.withOpacity(0.12),
-                    child: Icon(
-                      Icons.person_outline_rounded,
-                      color: Colors.white,
-                      size: 24.r,
-                    ),
+                  // AI Chat Button + Avatar
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Tooltip(
+                        message: 'Ask Aoun AI',
+                        child: GestureDetector(
+                          onTap: () => Navigator.of(context).pushNamed(AppRoutes.chatbot),
+                          child: Container(
+                            width: 40.w,
+                            height: 40.w,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: const LinearGradient(
+                                colors: [Color(0xFF0E7C7B), Color(0xFF188894)],
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color(0xFF188894).withOpacity(0.4),
+                                  blurRadius: 12,
+                                  offset: const Offset(0, 3),
+                                ),
+                              ],
+                            ),
+                            child: Icon(
+                              Icons.auto_awesome,
+                              color: Colors.white,
+                              size: 20.sp,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 8.w),
+                      CircleAvatar(
+                        radius: 22.r,
+                        backgroundColor: Colors.white.withOpacity(0.12),
+                        child: Icon(
+                          Icons.person_outline_rounded,
+                          color: Colors.white,
+                          size: 24.r,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

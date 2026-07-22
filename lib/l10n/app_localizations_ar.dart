@@ -399,4 +399,31 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get contactUs => 'تواصل معنا';
+
+  @override
+  String get clearHistory => 'مسح سجل المحادثة';
+
+  @override
+  String get clearHistoryConfirm => 'هل أنت متأكد من رغبتك في مسح سجل المحادثة بأكمله؟ لا يمكن التراجع عن هذا الإجراء.';
+
+  @override
+  String get clear => 'مسح';
+
+  @override
+  String get cancel => 'إلغاء';
+
+  @override
+  String get clearHistorySuccess => 'تم مسح سجل المحادثة بنجاح';
+
+  @override
+  String get clearHistoryFailure => 'فشل مسح سجل المحادثة';
+
+  @override
+  String get enterTokenFromEmail => 'أدخل رمز إعادة التعيين المُرسَل إلى بريدك الإلكتروني';
+
+  @override
+  String get resetToken => 'رمز إعادة التعيين';
+
+  @override
+  String get pleaseEnterToken => 'يرجى إدخال رمز إعادة التعيين من بريدك الإلكتروني';
 }

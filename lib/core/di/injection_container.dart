@@ -1,5 +1,7 @@
 import 'package:aoun/core/network/auth_interceptor.dart';
+import 'package:aoun/features/chatbot/dependency_injection/chatbot_injection.dart';
 import 'package:aoun/core/storage/auth_local_data_source.dart';
+import 'package:aoun/core/utils/secure_storage_service.dart';
 import 'package:aoun/features/auth/log_in/data/datasources/login_remote_data_source.dart';
 import 'package:aoun/features/auth/log_in/data/repositories/login_repository_impl.dart';
 import 'package:aoun/features/auth/log_in/domain/repositories/login_repository.dart';
@@ -14,6 +16,12 @@ import 'package:aoun/features/auth/register/data/repositories/register_repositor
 import 'package:aoun/features/auth/register/domain/repositories/register_repository.dart';
 import 'package:aoun/features/auth/register/domain/usecases/register_use_case.dart';
 import 'package:aoun/features/auth/register/presentation/cubit/register_cubit.dart';
+import 'package:aoun/features/auth/forgot_password/data/datasources/forgot_password_remote_data_source.dart';
+import 'package:aoun/features/auth/forgot_password/data/repositories/forgot_password_repository_impl.dart';
+import 'package:aoun/features/auth/forgot_password/domain/repositories/forgot_password_repository.dart';
+import 'package:aoun/features/auth/forgot_password/domain/usecases/forgot_password_use_case.dart';
+import 'package:aoun/features/auth/forgot_password/domain/usecases/reset_password_use_case.dart';
+import 'package:aoun/features/auth/forgot_password/presentation/cubit/forgot_password_cubit.dart';
 import 'package:aoun/features/home/data/datasources/home_remote_data_source.dart';
 import 'package:aoun/features/home/data/repositories/home_repository_impl.dart';
 import 'package:aoun/features/home/domain/repositories/home_repository.dart';
@@ -23,7 +31,8 @@ import 'package:aoun/features/home/data/services/home_role_resolver.dart';
 import 'package:aoun/features/cases/data/datasources/cases_remote_data_source.dart';
 import 'package:aoun/features/cases/data/repositories/cases_repository_impl.dart';
 import 'package:aoun/features/cases/domain/repositories/cases_repository.dart';
-import 'package:aoun/features/cases/domain/usecases/get_cases_use_case.dart' as cases;
+import 'package:aoun/features/cases/domain/usecases/get_cases_use_case.dart'
+    as cases;
 import 'package:aoun/features/cases/presentation/cubit/cases_cubit.dart';
 import 'package:aoun/features/maps/data/datasources/maps_remote_data_source.dart';
 import 'package:aoun/features/maps/data/repositories/maps_repository_impl.dart';
@@ -99,6 +108,36 @@ Future<void> initInjection() async {
   // Cubits
   sl.registerFactory<RegisterCubit>(() => RegisterCubit(sl<RegisterUseCase>()));
 
+  // Features - Forgot Password & Reset Password
+
+  // Data sources
+  sl.registerLazySingleton<ForgotPasswordRemoteDataSource>(
+    () => ForgotPasswordRemoteDataSourceImpl(sl<Dio>()),
+  );
+
+  // Repositories
+  sl.registerLazySingleton<ForgotPasswordRepository>(
+    () => ForgotPasswordRepositoryImpl(
+      remoteDataSource: sl<ForgotPasswordRemoteDataSource>(),
+    ),
+  );
+
+  // Use cases
+  sl.registerLazySingleton<ForgotPasswordUseCase>(
+    () => ForgotPasswordUseCase(sl<ForgotPasswordRepository>()),
+  );
+  sl.registerLazySingleton<ResetPasswordUseCase>(
+    () => ResetPasswordUseCase(sl<ForgotPasswordRepository>()),
+  );
+
+  // Cubits
+  sl.registerFactory<ForgotPasswordCubit>(
+    () => ForgotPasswordCubit(
+      forgotPasswordUseCase: sl<ForgotPasswordUseCase>(),
+      resetPasswordUseCase: sl<ResetPasswordUseCase>(),
+    ),
+  );
+
   // Features - Login & Logout
 
   // Data sources
@@ -170,9 +209,7 @@ Future<void> initInjection() async {
   sl.registerLazySingleton<cases.GetCasesUseCase>(
     () => cases.GetCasesUseCase(sl<CasesRepository>()),
   );
-  sl.registerFactory<CasesCubit>(
-    () => CasesCubit(sl<cases.GetCasesUseCase>()),
-  );
+  sl.registerFactory<CasesCubit>(() => CasesCubit(sl<cases.GetCasesUseCase>()));
 
   // Features - Maps
   sl.registerLazySingleton<MapsRemoteDataSource>(
@@ -211,7 +248,9 @@ Future<void> initInjection() async {
     () => RequestAssistanceRemoteDataSourceImpl(sl<Dio>()),
   );
   sl.registerLazySingleton<RequestAssistanceRepository>(
-    () => RequestAssistanceRepositoryImpl(sl<RequestAssistanceRemoteDataSource>()),
+    () => RequestAssistanceRepositoryImpl(
+      sl<RequestAssistanceRemoteDataSource>(),
+    ),
   );
   sl.registerLazySingleton<SubmitRequestAssistanceUseCase>(
     () => SubmitRequestAssistanceUseCase(sl<RequestAssistanceRepository>()),
@@ -225,7 +264,9 @@ Future<void> initInjection() async {
     () => FoundationLocalDataSourceImpl(),
   );
   sl.registerLazySingleton<FoundationRepository>(
-    () => FoundationRepositoryImpl(localDataSource: sl<FoundationLocalDataSource>()),
+    () => FoundationRepositoryImpl(
+      localDataSource: sl<FoundationLocalDataSource>(),
+    ),
   );
   sl.registerLazySingleton<SaveFoundationUseCase>(
     () => SaveFoundationUseCase(sl<FoundationRepository>()),
@@ -268,4 +309,7 @@ Future<void> initInjection() async {
   sl.registerFactory<RecommendationsCubit>(
     () => RecommendationsCubit(sl<GetRecommendationsUseCase>()),
   );
+
+  // Features - Chatbot AI Assistant
+  initChatbotInjection(sl);
 }

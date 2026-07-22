@@ -143,5 +143,14 @@
     }
   },
   "aboutUs": "About Us",
-  "contactUs": "Contact Us"
+  "contactUs": "Contact Us",
+  "clearHistory": "Clear History",
+  "clearHistoryConfirm": "Are you sure you want to clear all chat history? This action cannot be undone.",
+  "clear": "Clear",
+  "cancel": "Cancel",
+  "clearHistorySuccess": "Chat history cleared successfully",
+  "clearHistoryFailure": "Failed to clear chat history",
+  "enterTokenFromEmail": "Enter the reset token sent to your email address",
+  "resetToken": "Reset Token",
+  "pleaseEnterToken": "Please enter the reset token from your email"
 }

@@ -874,6 +874,51 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Contact Us'**
   String get contactUs;
+
+  /// No description provided for @clearHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear History'**
+  String get clearHistory;
+
+  /// No description provided for @clearHistoryConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to clear all chat history? This action cannot be undone.'**
+  String get clearHistoryConfirm;
+
+  /// No description provided for @clear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get clear;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @clearHistorySuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Chat history cleared successfully'**
+  String get clearHistorySuccess;
+
+  /// No description provided for @clearHistoryFailure.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to clear chat history'**
+  String get clearHistoryFailure;
+
+  /// No description provided for @enterTokenFromEmail.
+  String get enterTokenFromEmail;
+
+  /// No description provided for @resetToken.
+  String get resetToken;
+
+  /// No description provided for @pleaseEnterToken.
+  String get pleaseEnterToken;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
